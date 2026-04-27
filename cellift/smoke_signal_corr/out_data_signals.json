@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "cycles": [
+      36
+    ],
+    "timing": {
+      "reset_ticks": 6,
+      "lead_tick": 1,
+      "tick_base": 7,
+      "formula": "vcd_time = 5 * (tick_base + cycle)"
+    },
+    "method": "vanilla_vcd_xor",
+    "description": "Key-dependent signal activity from vanilla VCD comparison. HW diff = number of bits that differ between key1 and key2 at that cycle."
+  },
+  "cycles": {
+    "36": {
+      "vcd_time": 215,
+      "top_signal": null,
+      "top_signals": []
+    }
+  },
+  "masking_candidates": {
+    "method": "vanilla_vcd_xor",
+    "signals": []
+  }
+}

@@ -1,0 +1,45 @@
+CAPI=2:
+# Vanilla (non-CellIFT) Proteus dynamic OoO RISC-V core — FST trace output
+# Used instead of run_vanilla_trace when SIMLEN > FST_SIMLEN_THRESHOLD to
+# avoid the Verilator 32-bit VCD offset overflow (SIGABRT at ~4 GB).
+name: "::run_vanilla_trace_fst:0.1"
+description: "Run vanilla Proteus dynamic OoO core (no taint tracking, FST output)"
+
+filesets:
+  files_cells:
+    files:
+      - src/ift_sram_mem_notaint.sv
+      - src/proteus_tiny_soc.sv
+      - ../Core.v
+    file_type: systemVerilogSource
+
+  files_dv:
+    files:
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/elf.h : {is_include_file: true}
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/taintloader.cc
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/elfloader.cc
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/common_functions.cc
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/ticks.h : {is_include_file: true}
+      - dv/testbench.h : {is_include_file: true}
+      - dv/toplevel.cc
+    file_type: cppSource
+
+targets:
+  default:
+    default_tool: verilator
+    filesets:
+      - files_cells
+      - files_dv
+    toplevel: proteus_tiny_soc
+    tools:
+      verilator:
+        mode: cc
+        verilator_options:
+          - '--trace'
+          - '--trace-fst'
+          - '--trace-max-array 1024'
+          - '-CFLAGS "-std=c++11 -Wall -DIS_VANILLA -DTOPLEVEL_NAME=proteus_tiny_soc -g -O0"'
+          - '-LDFLAGS "-pthread -lutil"'
+          - "-Wall"
+          - "-Wno-PINCONNECTEMPTY"
+          - "-Wno-fatal"

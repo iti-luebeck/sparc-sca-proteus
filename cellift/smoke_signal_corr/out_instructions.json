@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "tick_base": 7,
+    "tick_period": 5,
+    "formula": "vcd_time = tick_period * (tick_base + cycle)",
+    "vcd": "/mnt/nvme1n1p1/cellift-designs/cellift-proteus/cellift/traces/vanilla_scenario_aes128_unmasked_key1.vcd",
+    "elf": "/mnt/nvme1n1p1/cellift-designs/cellift-proteus/cellift/sw/scenario_aes128_unmasked_key1/build/app.elf"
+  },
+  "cycles": [
+    {
+      "cycle": 36,
+      "vcd_time": 215,
+      "fetch": {
+        "pc": null,
+        "instruction": null,
+        "source": null
+      },
+      "retire": {
+        "retiring": false,
+        "pc": null,
+        "instruction": null
+      }
+    }
+  ]
+}

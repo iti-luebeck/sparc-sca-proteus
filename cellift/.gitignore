@@ -1,0 +1,19 @@
+build/
+generated/
+logs/
+fusesoc.conf
+# Simulation trace data (large CSVs, reproducible by running evaluation)
+results_*/
+# Analysis outputs
+*.npy
+*.png
+*.log
+# Python cache
+__pycache__/
+*.pyc
+# FST/VCD traces
+*.fst
+*.vcd
+*.vcd.gz
+# Scenario build artifacts
+sw/*/build/

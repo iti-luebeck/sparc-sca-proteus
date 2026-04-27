@@ -1,0 +1,42 @@
+CAPI=2:
+# CellIFT-instrumented Proteus — per-cycle CSV leakage logger for TVLA
+name: "::run_cellift_csvlog:0.1"
+description: "Run CellIFT on instrumented Proteus, writing leakage counters to CSV each cycle"
+
+filesets:
+  files_cells:
+    files:
+      - src/ift_sram_mem.sv
+      - src/proteus_tiny_soc_taints.sv
+      - generated/out/cellift.sv
+    file_type: systemVerilogSource
+
+  files_dv:
+    files:
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/elf.h : {is_include_file: true}
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/taintloader.cc
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/elfloader.cc
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/common_functions.cc
+      - $CELLIFT_DESIGN_PROCESSING_ROOT/common/dv/ticks.h : {is_include_file: true}
+      - dv/testbench.h : {is_include_file: true}
+      - dv/toplevel_csv.cc
+    file_type: cppSource
+
+targets:
+  default:
+    default_tool: verilator
+    filesets:
+      - files_cells
+      - files_dv
+    toplevel: proteus_tiny_soc
+    tools:
+      verilator:
+        mode: cc
+        verilator_options:
+          - '--trace'
+          - '--trace-max-array 1024'
+          - '-CFLAGS "-std=c++11 -Wall -DTOPLEVEL_NAME=proteus_tiny_soc -O2"'
+          - '-LDFLAGS "-pthread -lutil"'
+          - "-Wall"
+          - "-Wno-PINCONNECTEMPTY"
+          - "-Wno-fatal"
