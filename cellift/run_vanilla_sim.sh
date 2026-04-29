@@ -19,12 +19,13 @@ TRACEFILE="${2:-${SCRIPT_DIR}/traces/vanilla_aes.vcd}"
 SCENARIO="${3:-scenario_aes128_masked_key}"
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-ENV_SH="/mnt/nvme1n1p1/cellift-meta-leakage/env.sh"
+: "${SPARC_SCA_ROOT:=$(cd "${SCRIPT_DIR}/../../.." && pwd)}"
+ENV_SH="${SPARC_SCA_ROOT}/env.sh"
 SIM_BIN="${SCRIPT_DIR}/build/run_vanilla_trace_0.1/default-verilator/Vproteus_tiny_soc"
 ELF="${SCRIPT_DIR}/sw/${SCENARIO}/build/app.elf"
 
-# ── Sanity checks ─────────────────────────────────────────────────────────────
-for f in "$ENV_SH" "$SIM_BIN" "$ELF"; do
+# ── Sanity checks ────────────────────────────────────────────────────────────────────────────────
+for f in "$SIM_BIN" "$ELF"; do
     if [[ ! -f "$f" ]]; then
         echo "ERROR: required file not found: $f" >&2
         exit 1
@@ -33,9 +34,11 @@ done
 
 mkdir -p "$(dirname "$TRACEFILE")"
 
-# ── Source CellIFT environment ────────────────────────────────────────────────
-# shellcheck source=/dev/null
-source "$ENV_SH"
+# ── Source CellIFT environment ────────────────────────────────────────────────────────
+if [[ "${CELLIFT_ENV_SOURCED:-}" != "yes" ]]; then
+    # shellcheck source=/dev/null
+    source "$ENV_SH"
+fi
 
 # ── Run ───────────────────────────────────────────────────────────────────────
 echo "=== Proteus Vanilla Simulator ==="

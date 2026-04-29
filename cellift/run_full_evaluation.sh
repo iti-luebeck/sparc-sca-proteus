@@ -297,6 +297,14 @@ if [[ "$SKIP_COMPILE" -eq 0 ]]; then
         ./compile_scenarios.sh "$MASKED_A"
         ./compile_scenarios.sh "$MASKED_B"
     fi
+    # Also compile the fixed template scenarios used by run_signal_correlation.sh
+    # (root-cause attribution in Steps 5/6). These are small single-trace builds.
+    ./compile_scenarios.sh "$UNMASKED_TEMPLATE_A"
+    ./compile_scenarios.sh "$UNMASKED_TEMPLATE_B"
+    if [[ "$SKIP_MASKED" -eq 0 ]]; then
+        ./compile_scenarios.sh "$MASKED_TEMPLATE_A"
+        ./compile_scenarios.sh "$MASKED_TEMPLATE_B"
+    fi
 fi
 
 banner "Step 3 - Multi-Trace TVLA"

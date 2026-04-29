@@ -22,7 +22,10 @@ N_MASKED="${2:-100}"
 CHECK_SCENARIOS="${CHECK_SCENARIOS:-1}"
 STRICT="${STRICT:-0}"
 
-ENV_SH="/mnt/nvme1n1p1/cellift-meta-leakage/env.sh"
+# Locate env.sh: three levels up from designs/<cpu>/cellift/ → repo root.
+# Allow override via SPARC_SCA_ROOT.
+: "${SPARC_SCA_ROOT:=$(cd "${SCRIPT_DIR}/../../.." && pwd)}"
+ENV_SH="${SPARC_SCA_ROOT}/env.sh"
 
 required_scripts=(
   gen_scenarios.py
@@ -107,11 +110,13 @@ resolve_scenario_prefix() {
 echo "== CellIFT Evaluation Preflight =="
 echo "  N_UNMASKED=${N_UNMASKED} N_MASKED=${N_MASKED} CHECK_SCENARIOS=${CHECK_SCENARIOS}"
 
-if [[ ! -f "$ENV_SH" ]]; then
-  echo "ERROR: env not found: $ENV_SH"
-  exit 1
+if [[ "${CELLIFT_ENV_SOURCED:-}" != "yes" ]]; then
+  if [[ ! -f "$ENV_SH" ]]; then
+    echo "ERROR: env not found: $ENV_SH"
+    exit 1
+  fi
+  source "$ENV_SH"
 fi
-source "$ENV_SH"
 
 fail=0
 

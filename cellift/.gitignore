@@ -17,3 +17,6 @@ __pycache__/
 *.vcd.gz
 # Scenario build artifacts
 sw/*/build/
+# Generated scenario sets (recreated by gen_scenarios.py + compile_scenarios.sh)
+sw/multi_*/
+sw/_manifests/

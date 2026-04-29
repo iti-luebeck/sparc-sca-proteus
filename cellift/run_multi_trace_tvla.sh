@@ -58,11 +58,14 @@ if [[ "$EXPECTED_ROWS" -le 0 ]]; then
     exit 1
 fi
 
-ENV_SH="/mnt/nvme1n1p1/cellift-meta-leakage/env.sh"
+: "${SPARC_SCA_ROOT:=$(cd "${SCRIPT_DIR}/../../.." && pwd)}"
+ENV_SH="${SPARC_SCA_ROOT}/env.sh"
 CSV_BIN="${SCRIPT_DIR}/build/run_cellift_csvlog_0.1/default-verilator/Vproteus_tiny_soc"
 
 # ── Sanity checks ─────────────────────────────────────────────────────────────
-source "$ENV_SH"
+if [[ "${CELLIFT_ENV_SOURCED:-}" != "yes" ]]; then
+    source "$ENV_SH"
+fi
 
 if [[ ! -x "$CSV_BIN" ]]; then
     echo "ERROR: CSV logger binary not found: $CSV_BIN"

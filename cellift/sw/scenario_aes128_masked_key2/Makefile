@@ -1,5 +1,5 @@
-RISCV_TOOLS = /mnt/nvme1n1p1/chipyard-1.11.0/.conda-env/riscv-tools
-RISCV_PREFIX = $(RISCV_TOOLS)/bin/riscv64-unknown-elf
+RISCV_TOOLS ?= /mnt/nvme1n1p1/chipyard-1.11.0/.conda-env/riscv-tools
+RISCV_PREFIX ?= $(if $(RISCV),$(RISCV)/bin/riscv64-unknown-elf,$(RISCV_TOOLS)/bin/riscv64-unknown-elf)
 
 # Proteus is RV32IM (no compressed extension)
 RV_ARCH_FLAGS ?= -march=rv32im -mabi=ilp32

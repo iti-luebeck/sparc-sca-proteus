@@ -333,16 +333,21 @@ def main():
                     help="Optional JSON output path for per-cycle instruction mapping")
     args = ap.parse_args()
 
-    source_env = "/mnt/nvme1n1p1/cellift-meta-leakage/env.sh"
-    if Path(source_env).exists():
-        # Pull RISCV path from env.sh into os.environ so find_tool works
-        result = subprocess.run(
-            ["bash", "-c", f"source {source_env} 2>/dev/null; echo $RISCV"],
-            capture_output=True, text=True,
-        )
-        riscv = result.stdout.strip()
-        if riscv:
-            os.environ["RISCV"] = riscv
+    args = ap.parse_args()
+
+    # Populate RISCV if not already set (native without env.sh; noop in Docker).
+    if not os.environ.get("RISCV"):
+        _script_dir = Path(__file__).resolve().parent
+        source_env = _script_dir / ".." / ".." / ".." / "env.sh"
+        source_env = source_env.resolve()
+        if source_env.exists():
+            result = subprocess.run(
+                ["bash", "-c", f"source {source_env} 2>/dev/null; echo $RISCV"],
+                capture_output=True, text=True,
+            )
+            riscv = result.stdout.strip()
+            if riscv:
+                os.environ["RISCV"] = riscv
 
     objdump_bin   = args.objdump   or find_tool("riscv32-unknown-elf-objdump")
     addr2line_bin = args.addr2line or find_tool("riscv32-unknown-elf-addr2line")

@@ -20,6 +20,17 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PREFIX="${1:?Usage: compile_scenarios.sh <PREFIX>}"
 SW_DIR="${SCRIPT_DIR}/sw"
 
+# Determine toolchain: prefer $RISCV (Docker), else rely on PATH.
+MAKE_TC_ARGS=()
+if [[ -n "${RISCV:-}" ]]; then
+    MAKE_TC_ARGS=("RISCV_PREFIX=${RISCV}/bin/riscv64-unknown-elf")
+elif ! command -v riscv64-unknown-elf-gcc >/dev/null 2>&1; then
+    CANDIDATE_TC="/mnt/nvme1n1p1/chipyard-1.11.0/.conda-env/riscv-tools/bin"
+    if [[ -x "${CANDIDATE_TC}/riscv64-unknown-elf-gcc" ]]; then
+        export PATH="${CANDIDATE_TC}:${PATH}"
+    fi
+fi
+
 # ── Find matching scenario directories ────────────────────────────────────────
 mapfile -t dirs < <(find "$SW_DIR" -maxdepth 1 -type d -name "${PREFIX}*" | sort)
 
@@ -40,7 +51,7 @@ for dir in "${dirs[@]}"; do
     name="$(basename "$dir")"
     log="${dir}/build.log"
 
-    if make -C "$dir" --no-print-directory > "$log" 2>&1; then
+    if make -C "$dir" --no-print-directory "${MAKE_TC_ARGS[@]}" > "$log" 2>&1; then
         echo "  ✅  $name"
         pass=$((pass + 1))
     else
@@ -62,6 +73,6 @@ if [[ $fail -gt 0 ]]; then
     done
     echo ""
     echo "  Tip: check the toolchain path in sw/<scenario>/Makefile"
-    echo "       Expected: /mnt/nvme1n1p1/chipyard-1.11.0/.conda-env/riscv-tools/bin/"
+    echo "       Set RISCV env var (e.g. /opt/sparc-sca/riscv) or ensure riscv64-unknown-elf-gcc is on PATH"
     exit 1
 fi
