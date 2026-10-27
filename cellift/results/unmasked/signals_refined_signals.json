@@ -1,0 +1,2262 @@
+{
+  "metadata": {
+    "cycles": [
+      424,
+      456,
+      2071,
+      2116,
+      2132,
+      2134,
+      2148,
+      2155,
+      2174,
+      2201,
+      2236,
+      2248,
+      2270,
+      2292,
+      2304,
+      2325,
+      2337,
+      2344,
+      2473,
+      2887,
+      2913,
+      2927,
+      2933,
+      2937
+    ],
+    "timing": {
+      "reset_ticks": 6,
+      "lead_tick": 1,
+      "tick_base": 7,
+      "formula": "vcd_time = 5 * (tick_base + cycle)"
+    }
+  },
+  "cycles": {
+    "424": {
+      "vcd_time": 2155,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 39,
+        "value_a_hex": "0x1ffb730008f8f80010f8f80013120b0",
+        "value_b_hex": "0x2ec81000094c900019c69000e80930"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 39,
+          "value_a_hex": "0x1ffb730008f8f80010f8f80013120b0",
+          "value_b_hex": "0x2ec81000094c900019c69000e80930"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_4_pc_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0xffffffff"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_4_target_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0xffffffff"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_IR_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_NEXT_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_RD_DATA_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_RS2_DATA_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_TRAP_VAL_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_RS2_DATA_leak0",
+          "width": 32,
+          "hamming_weight_diff": 29,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000801"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 24,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800001f9"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_RS1_DATA_t0",
+          "width": 32,
+          "hamming_weight_diff": 24,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0xff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_fullDBusCmds_2_payload_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xfffffffc",
+          "value_b_hex": "0x1fc"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_NEXT_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800001fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_PREDICTED_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800001fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_LSU_TARGET_ADDRESS_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1ff"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_2.Lsu_dbusCtrl_currentCmd_cmd_address_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xfffffffc",
+          "value_b_hex": "0x1fc"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_rdbStream_payload_registerMap_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_storedMessage_registerMap_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_dispatchStream_payload_registerMap_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_resultDispatchMessage_registerMap_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.intAlus_7_out_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_rdbStream_payload_registerMap_PREDICTED_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_storedMessage_registerMap_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_dispatchStream_payload_registerMap_PREDICTED_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_resultDispatchMessage_registerMap_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.intAlus_7_out_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.pipelineRegs_EX_ALU7_1_out_NEXT_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_IR_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0xed4583"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_RS1_DATA_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000eff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_TRAP_VAL_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007ff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_2.TrapHandler_exceptionSignals_trapVal_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007ff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_2_out_TRAP_VAL_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007ff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000fff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_LSU_TARGET_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000fff"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_dbus_cache_0_0_tag_t0",
+          "width": 25,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0x1ffffff",
+          "value_b_hex": "0x100001f"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_RD_leak0",
+          "width": 5,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x1f",
+          "value_b_hex": "0xb"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_TRAP_CAUSE_leak0",
+          "width": 4,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0xb",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "456": {
+      "vcd_time": 2315,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 32,
+        "value_a_hex": "0x0",
+        "value_b_hex": "0x2ec81000094c900019c69000e80930"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 32,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x2ec81000094c900019c69000e80930"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_IR_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_NEXT_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_RD_DATA_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_RS2_DATA_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_TRAP_VAL_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_RS2_DATA_leak0",
+          "width": 32,
+          "hamming_weight_diff": 29,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000801"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 24,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800001f9"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_RS1_DATA_t0",
+          "width": 32,
+          "hamming_weight_diff": 24,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0xff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_fullDBusCmds_2_payload_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xfffffffc",
+          "value_b_hex": "0x1fc"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_NEXT_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800001fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_PREDICTED_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800001fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_storedMessage_registerMap_LSU_TARGET_ADDRESS_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1ff"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_2.Lsu_dbusCtrl_currentCmd_cmd_address_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xfffffffc",
+          "value_b_hex": "0x1fc"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_rdbStream_payload_registerMap_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_storedMessage_registerMap_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_dispatchStream_payload_registerMap_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_resultDispatchMessage_registerMap_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.intAlus_7_out_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 22,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800003fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_rdbStream_payload_registerMap_PREDICTED_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD0_storedMessage_registerMap_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_dispatchStream_payload_registerMap_PREDICTED_PC_leak0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_resultDispatchMessage_registerMap_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.intAlus_7_out_PREDICTED_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.pipelineRegs_EX_ALU7_1_out_NEXT_PC_t0",
+          "width": 32,
+          "hamming_weight_diff": 21,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007fd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_IR_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0xed4583"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_RS1_DATA_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000eff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_TRAP_VAL_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007ff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_2.TrapHandler_exceptionSignals_trapVal_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007ff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_2_out_TRAP_VAL_leak0",
+          "width": 32,
+          "hamming_weight_diff": 20,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800007ff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000fff"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_LSU_TARGET_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x80000fff"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_dbus_cache_0_0_tag_t0",
+          "width": 25,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0x1ffffff",
+          "value_b_hex": "0x100001f"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_dbus_cache_0_1_tag_t0",
+          "width": 25,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0x1ffffff",
+          "value_b_hex": "0x100001f"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_dbus_cache_1_0_tag_t0",
+          "width": 25,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0x1ffffff",
+          "value_b_hex": "0x100001f"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_RD_leak0",
+          "width": 5,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x1f",
+          "value_b_hex": "0xb"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_LM_LOAD2_rdbStream_payload_registerMap_TRAP_CAUSE_leak0",
+          "width": 4,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0xb",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2071": {
+      "vcd_time": 10390,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_0.Lsu_dbusCtrl_currentCmd_cmd_address_leak0",
+        "width": 32,
+        "hamming_weight_diff": 6,
+        "value_a_hex": "0x0",
+        "value_b_hex": "0xe58"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_0.Lsu_dbusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 6,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xe58"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.retirementStage.Lsu_dbusCtrl_currentCmd_cmd_wdata_leak0",
+          "width": 128,
+          "hamming_weight_diff": 6,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xc5300000000000000000000000000000"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.retirementStage.Lsu_dbusCtrl_currentCmd_cmd_wmask_leak0",
+          "width": 16,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xc000"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlySendingIndex_payload_t0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0xc",
+          "value_b_hex": "0x1c"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_valid_leak0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2116": {
+      "vcd_time": 10615,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 47,
+        "value_a_hex": "0x1ffb730008f8f80010f8f80013120b0",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 47,
+          "value_a_hex": "0x1ffb730008f8f80010f8f80013120b0",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_previousStoreAddress_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_previousStoreBuffer_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU0_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU0_resultCdbMessage_metadata_LSU_PSF_ADDRESS_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU1_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU2_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU3_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU4_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU5_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU6_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU7_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_MUL0_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_MUL1_cdbStream_payload_metadata_LSU_PSF_ADDRESS_leak0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x14"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_dbusAxi_b_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_valid_leak0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x2",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2132": {
+      "vcd_time": 10695,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 47,
+        "value_a_hex": "0xdee72000e1a4b00191df9001066fa0",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 47,
+          "value_a_hex": "0xdee72000e1a4b00191df9001066fa0",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 4,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1c8"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x10"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0xc"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_dbusAxi_b_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x2",
+          "value_b_hex": "0x3"
+        }
+      ]
+    },
+    "2134": {
+      "vcd_time": 10705,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 19,
+        "value_a_hex": "0x0",
+        "value_b_hex": "0x21040000110b000018409000040f80"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 19,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x21040000110b000018409000040f80"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2148": {
+      "vcd_time": 10775,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 47,
+        "value_a_hex": "0xdee72000e1a4b00191df9001066fa0",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 47,
+          "value_a_hex": "0xdee72000e1a4b00191df9001066fa0",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 4,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1c8"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x2"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x2"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0xc"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_dbusAxi_b_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2155": {
+      "vcd_time": 10810,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 47,
+        "value_a_hex": "0x0",
+        "value_b_hex": "0xdee72000e1a4b00191df9001066fa0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 47,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xdee72000e1a4b00191df9001066fa0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0xc",
+          "value_b_hex": "0x4"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_dbusAxi_b_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_valid_leak0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2174": {
+      "vcd_time": 10905,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 52,
+        "value_a_hex": "0x0",
+        "value_b_hex": "0xf66653f0b82111b0731428703254703"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 52,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xf66653f0b82111b0731428703254703"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_0.Lsu_dbusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 6,
+          "value_a_hex": "0x11f0",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x1c",
+          "value_b_hex": "0x4"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_1.Lsu_dbusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x20"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_dbusAxi_decoder_io_input_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_valid_leak0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x2",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2201": {
+      "vcd_time": 11040,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 35,
+        "value_a_hex": "0xb1289000202c410fce0957001468000",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 35,
+          "value_a_hex": "0xb1289000202c410fce0957001468000",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU2_resultCdbMessage_metadata_LSU_PSF_ADDRESS_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU4_resultCdbMessage_metadata_LSU_PSF_ADDRESS_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0x800019e5",
+          "value_b_hex": "0xffffffff"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_RS_EX_ALU6_resultCdbMessage_metadata_LSU_PSF_ADDRESS_t0",
+          "width": 32,
+          "hamming_weight_diff": 23,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x800019e5"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x2",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2236": {
+      "vcd_time": 11215,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_6_pc_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_6_pc_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_6_target_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 4,
+          "value_a_hex": "0x3c",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2248": {
+      "vcd_time": 11275,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_6_pc_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_6_pc_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.BranchTargetPredictor.entries_6_target_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 25,
+          "value_a_hex": "0x10c49000108f0000000f00010b0f80",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 3,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xd"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xc"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2270": {
+      "vcd_time": 11385,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x18",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x1c",
+          "value_b_hex": "0x7c"
+        }
+      ]
+    },
+    "2292": {
+      "vcd_time": 11495,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 3,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x58"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.cache_ibus_cmdBuffer_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x4c"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x4"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_valid_leak0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2304": {
+      "vcd_time": 11555,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 64,
+        "value_a_hex": "0xcaffa103d46a49392b25b3a3be06ba2a",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 64,
+          "value_a_hex": "0xcaffa103d46a49392b25b3a3be06ba2a",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0xc",
+          "value_b_hex": "0x4"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_valid_leak0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2325": {
+      "vcd_time": 11660,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_2_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.retirementStage.Lsu_dbusCtrl_currentCmd_cmd_wdata_leak0",
+          "width": 128,
+          "hamming_weight_diff": 28,
+          "value_a_hex": "0x848f8e92a8dc69a0000000000000000",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.retirementStage.Lsu_dbusCtrl_currentCmd_cmd_wmask_leak0",
+          "width": 16,
+          "hamming_weight_diff": 8,
+          "value_a_hex": "0xff00",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 4,
+          "value_a_hex": "0x1e",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_softResetTrigger_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x12",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_oldestIndex_willIncrement_leak0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_softResetTrigger_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.retirementStage.Lsu_dbusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_ReorderBuffer_l426_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2337": {
+      "vcd_time": 11720,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_2_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 3,
+          "value_a_hex": "0x1c",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2344": {
+      "vcd_time": 11755,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+        "width": 128,
+        "hamming_weight_diff": 69,
+        "value_a_hex": "0x8d9bc6a2a5c8f992bf3bd23bed27b1a",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.toplevel_soc_ibusAxi_decoder_io_input_r_rData_data_leak0",
+          "width": 128,
+          "hamming_weight_diff": 69,
+          "value_a_hex": "0x8d9bc6a2a5c8f992bf3bd23bed27b1a",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_1_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_2_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x1c"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2473": {
+      "vcd_time": 12400,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_3_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_3_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_4_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 3,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x34"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_dbusAxi_decoder_io_input_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        }
+      ]
+    },
+    "2887": {
+      "vcd_time": 14470,
+      "top_signal": {
+        "kind": "t0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_0_t0",
+        "width": 32,
+        "hamming_weight_diff": 31,
+        "value_a_hex": "0xffffffff",
+        "value_b_hex": "0x1"
+      },
+      "top_signals": [
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_ssbPredictorEntries_0_t0",
+          "width": 32,
+          "hamming_weight_diff": 31,
+          "value_a_hex": "0xffffffff",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_movingToCmdBuffer_payload_leak0",
+          "width": 2,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.DynamicMemoryBackbone_currentlyInserting_payload_stageIndex_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x1",
+          "value_b_hex": "0x3"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.Scheduler_rob_lastSpeculativeCFInstruction_payload_leak0",
+          "width": 5,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x4"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.when_DynamicMemoryBackbone_l106_2_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        }
+      ]
+    },
+    "2913": {
+      "vcd_time": 14600,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+        "width": 32,
+        "hamming_weight_diff": 2,
+        "value_a_hex": "0x0",
+        "value_b_hex": "0xc"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 2,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0xc"
+        }
+      ]
+    },
+    "2927": {
+      "vcd_time": 14670,
+      "top_signal": null,
+      "top_signals": []
+    },
+    "2933": {
+      "vcd_time": 14700,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+        "width": 32,
+        "hamming_weight_diff": 1,
+        "value_a_hex": "0x4",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x0"
+        }
+      ]
+    },
+    "2937": {
+      "vcd_time": 14720,
+      "top_signal": {
+        "kind": "leak0",
+        "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_0.Lsu_dbusCtrl_currentCmd_cmd_address_leak0",
+        "width": 32,
+        "hamming_weight_diff": 3,
+        "value_a_hex": "0x150",
+        "value_b_hex": "0x0"
+      },
+      "top_signals": [
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.loadStages_0.Lsu_dbusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 3,
+          "value_a_hex": "0x150",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.pipeline.fetch.Fetcher_ibusCtrl_currentCmd_cmd_address_leak0",
+          "width": 32,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x4",
+          "value_b_hex": "0x0"
+        },
+        {
+          "kind": "t0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_dbusAxi_decoder_io_input_r_valid_t0",
+          "width": 1,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x0",
+          "value_b_hex": "0x1"
+        },
+        {
+          "kind": "leak0",
+          "signal": "TOP.proteus_tiny_soc.i_core.soc_ibusAxi_decoder_io_input_r_payload_id_leak0",
+          "width": 2,
+          "hamming_weight_diff": 1,
+          "value_a_hex": "0x3",
+          "value_b_hex": "0x1"
+        }
+      ]
+    }
+  }
+}

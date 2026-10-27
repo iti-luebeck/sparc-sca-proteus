@@ -12,8 +12,8 @@ This guide keeps only the minimal workflow:
 ## 1) Environment
 
 ```bash
-source /mnt/nvme1n1p1/cellift-meta-leakage/env.sh
-cd /mnt/nvme1n1p1/cellift-designs/cellift-proteus/cellift
+source env.sh
+cd designs/proteus/cellift
 ```
 
 ## 2) Core Entry Point

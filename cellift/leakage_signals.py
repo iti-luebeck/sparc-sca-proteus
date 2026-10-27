@@ -221,11 +221,15 @@ def compare_snapshots(snap_a: dict, snap_b: dict, id_to_sig: dict,
     all_sigs = set(snap_a) | set(snap_b)
     rows_leak0, rows_t0 = [], []
 
-    aggregate_counter_names = {
-        'hamming_weight_counter_t0',
-        'hamming_distance_counter_t0',
-        'leakage_counter_t0',
-    }
+    # Aggregate counters are the pass's own per-module totals, not design nets,
+    # so they must never compete with real signals in the per-net ranking. An
+    # exact-name set misses every wrapper that prefixes or infixes them --
+    # Proteus emits `pipeline_hamming_weight_counter_t0`, Ibex emits
+    # `hamming_weight_counter_core_t0` -- so both cores were ranking their own
+    # aggregate totals as if they were nets.
+    aggregate_counter_re = re.compile(
+        r'(hamming_weight_counter|hamming_distance_counter|leakage_counter)'
+        r'(_[A-Za-z0-9]+)*_t0$')
 
     for sig in all_sigs:
         va = snap_a.get(sig, 0)
@@ -239,7 +243,7 @@ def compare_snapshots(snap_a: dict, snap_b: dict, id_to_sig: dict,
 
         if (not include_counters) and kind == 't0':
             short = sig.split('.')[-1]
-            if short in aggregate_counter_names:
+            if aggregate_counter_re.search(short):
                 continue
 
         entry = (sig, w, va, vb, diff, hw)

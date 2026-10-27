@@ -1,0 +1,38 @@
+{
+  "pipeline": "core_tvla_root_cause",
+  "instrumentation": {
+    "fusesoc_target": "run_cellift_csvlog",
+    "sim_binary": "/workspace/designs/proteus/cellift/build/run_cellift_csvlog_0.1/default-verilator/Vproteus_tiny_soc",
+    "sim_binary_sha256": "6494f02989ba97f6adca2bf7768cbb679fa1ef15cb906479cff2156921c0102b",
+    "sim_binary_mtime_utc": "2026-10-27T13:46:53Z"
+  },
+  "workload": "aes",
+  "n_unmasked": 2,
+  "n_masked": 2,
+  "simlen": 3000,
+  "seed": 42,
+  "jobs": 16,
+  "threshold_t": 4.5,
+  "window_len": 5,
+  "attr_cycles_max": 24,
+  "interval_top_k": 8,
+  "unmasked": {
+    "first_hw_leak_cycle": 28,
+    "attribution_cycles": "424 456 2071 2116 2132 2134 2148 2155 2174 2201 2236 2248 2270 2292 2304 2325 2337 2344 2473 2887 2913 2927 2933 2937",
+    "attribution_simlen": 3000,
+    "signal_json": "/workspace/designs/proteus/cellift/results/unmasked/signals_refined_signals.json",
+    "data_signal_json": "/workspace/designs/proteus/cellift/results/unmasked/signals_refined_data_signals.json",
+    "instruction_json": "/workspace/designs/proteus/cellift/results/unmasked/signals_refined_instructions.json",
+    "regions_json": "/workspace/designs/proteus/cellift/results/unmasked/leakage_regions.json",
+    "regions_csv": "/workspace/designs/proteus/cellift/results/unmasked/leakage_regions.csv"
+  },
+  "masked": {
+    "first_hw_leak_cycle": 39,
+    "attribution_cycles": "2291 2308 2342 2347 2384 2386 2395 2429 2484 2521 2555 2572 2574 2606 2613 2614 2701 2703 2739 2746 2756 2758 2767 2970",
+    "attribution_simlen": 3000,
+    "signal_json": "/workspace/designs/proteus/cellift/results/masked/signals_refined_signals.json",
+    "instruction_json": "/workspace/designs/proteus/cellift/results/masked/signals_refined_instructions.json",
+    "regions_json": "/workspace/designs/proteus/cellift/results/masked/leakage_regions.json",
+    "regions_csv": "/workspace/designs/proteus/cellift/results/masked/leakage_regions.csv"
+  }
+}

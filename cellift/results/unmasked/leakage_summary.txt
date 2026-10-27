@@ -1,0 +1,206 @@
+CellIFT Per-Cycle Leakage Quantification
+N_A=2  N_B=2  cycles=2995
+
+[leakage_counter_t0]
+  first_leaky_cycle   = none
+  total_leaky_cycles  = 0
+  det_leak_cycles     = 0
+  stoch_leak_cycles   = 0
+  peak_magnitude      = 0.0000
+  max_cohens_d        = 0.0000
+  max_welch_t         = nan
+  episodes            = 0
+
+  [region_overlap]
+    strict_regions    = 0
+    strict_cycles     = 0
+    episode_cycles    = 0
+    overlap_cycles    = 0
+    overlap_jaccard   = 0.000000
+
+[hamming_weight_counter_t0]
+  first_leaky_cycle   = 28
+  total_leaky_cycles  = 2820
+  det_leak_cycles     = 1912
+  stoch_leak_cycles   = 908
+  peak_magnitude      = 644.0000
+  max_cohens_d        = 1000.0000
+  max_welch_t         = 142.6000
+  episodes            = 7
+
+  [region_overlap]
+    strict_regions    = 44
+    strict_cycles     = 364
+    episode_cycles    = 2852
+    overlap_cycles    = 364
+    overlap_jaccard   = 0.127630
+
+  [episode_0]
+    cycles           = 28-69
+    duration         = 42
+    regime           = det_leak
+    peak_magnitude   = 528.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 37
+
+  [episode_1]
+    cycles           = 79-80
+    duration         = 2
+    regime           = det_leak
+    peak_magnitude   = 55.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 79
+
+  [episode_2]
+    cycles           = 88-89
+    duration         = 2
+    regime           = det_leak
+    peak_magnitude   = 22.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 88
+
+  [episode_3]
+    cycles           = 95-96
+    duration         = 2
+    regime           = det_leak
+    peak_magnitude   = 11.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 95
+
+  [episode_4]
+    cycles           = 115-154
+    duration         = 40
+    regime           = det_leak
+    peak_magnitude   = 55.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 141
+
+  [episode_5]
+    cycles           = 164-236
+    duration         = 73
+    regime           = det_leak
+    peak_magnitude   = 301.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 170
+
+  [episode_6]
+    cycles           = 304-2994
+    duration         = 2691
+    regime           = det_leak
+    peak_magnitude   = 644.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = 142.6000
+    peak_cycle       = 531
+
+[hamming_distance_counter_t0]
+  first_leaky_cycle   = 28
+  total_leaky_cycles  = 2795
+  det_leak_cycles     = 1888
+  stoch_leak_cycles   = 907
+  peak_magnitude      = 945.0000
+  max_cohens_d        = 1000.0000
+  max_welch_t         = 783.0000
+  episodes            = 10
+
+  [region_overlap]
+    strict_regions    = 36
+    strict_cycles     = 319
+    episode_cycles    = 2826
+    overlap_cycles    = 319
+    overlap_jaccard   = 0.112880
+
+  [episode_0]
+    cycles           = 28-64
+    duration         = 37
+    regime           = det_leak
+    peak_magnitude   = 52.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 64
+
+  [episode_1]
+    cycles           = 79-79
+    duration         = 1
+    regime           = det_leak
+    peak_magnitude   = 55.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 79
+
+  [episode_2]
+    cycles           = 88-88
+    duration         = 1
+    regime           = det_leak
+    peak_magnitude   = 22.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 88
+
+  [episode_3]
+    cycles           = 95-95
+    duration         = 1
+    regime           = det_leak
+    peak_magnitude   = 11.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 95
+
+  [episode_4]
+    cycles           = 115-135
+    duration         = 21
+    regime           = det_leak
+    peak_magnitude   = 44.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 135
+
+  [episode_5]
+    cycles           = 141-141
+    duration         = 1
+    regime           = det_leak
+    peak_magnitude   = 55.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 141
+
+  [episode_6]
+    cycles           = 147-147
+    duration         = 1
+    regime           = det_leak
+    peak_magnitude   = 11.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 147
+
+  [episode_7]
+    cycles           = 153-153
+    duration         = 1
+    regime           = det_leak
+    peak_magnitude   = 11.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 153
+
+  [episode_8]
+    cycles           = 164-234
+    duration         = 71
+    regime           = det_leak
+    peak_magnitude   = 33.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = nan
+    peak_cycle       = 164
+
+  [episode_9]
+    cycles           = 304-2994
+    duration         = 2691
+    regime           = det_leak
+    peak_magnitude   = 945.0000
+    peak_cohens_d    = 1000.0000
+    peak_welch_t     = 783.0000
+    peak_cycle       = 529

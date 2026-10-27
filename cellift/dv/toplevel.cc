@@ -35,14 +35,13 @@ int main(int argc, char **argv, char **env) {
 
 #if !defined(IS_VANILLA) && VM_TRACE
   // Print CellIFT leakage counters
-  auto *rootp = tb->module_->rootp;
   std::cout << "=== CellIFT Leakage Counters ===" << std::endl;
   std::cout << "leakage_counter_t0:          " << std::dec
-            << rootp->proteus_tiny_soc__DOT__leakage_counter_t0 << std::endl;
+            << tb->module_->leakage_counter_t0 << std::endl;
   std::cout << "hamming_weight_counter_t0:   " << std::dec
-            << rootp->proteus_tiny_soc__DOT__hamming_weight_counter_t0 << std::endl;
+            << tb->module_->hamming_weight_counter_t0 << std::endl;
   std::cout << "hamming_distance_counter_t0: " << std::dec
-            << rootp->proteus_tiny_soc__DOT__hamming_distance_counter_t0 << std::endl;
+            << tb->module_->hamming_distance_counter_t0 << std::endl;
 #endif
 
   delete tb;

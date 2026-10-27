@@ -35,7 +35,7 @@ targets:
         verilator_options:
           - '--trace'
           - '--trace-max-array 1024'
-          - '-CFLAGS "-std=c++11 -Wall -DTOPLEVEL_NAME=proteus_tiny_soc -g -O0"'
+          - '-CFLAGS "-std=c++11 -Wall -DTOPLEVEL_NAME=proteus_tiny_soc -g -O2"'
           - '-LDFLAGS "-pthread -lutil"'
           - "-Wall"
           - "-Wno-PINCONNECTEMPTY"

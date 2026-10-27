@@ -32,11 +32,15 @@ Options:
   --seed N               Matched-pairs seed (default: 42)
     --jobs N               Parallel workers for simulations (default: auto-detected CPU count)
   --results DIR          Output root directory (default: ./results)
+  --key-a NAME           Fixed key for group A (k1|k2|k3|k4 or 32 hex
+                         digits); group B is untouched
   --threshold T          Welch |t| threshold (default: 4.5)
   --window-len N         Fallback cycles after first leak if region selection empty (default: 5)
   --attr-cycles-max N    Max diversified attribution cycles for root-cause mapping (default: 24)
     --interval-top-k N     Top-K annotated intervals per counter (default: 8)
   --plot                 Enable dashboard/episode plots
+  --allow-trim           Accept trace-length trimming (needed on a
+                         non-constant-time core; deflates |t|)
   --no-interval-plots    Disable annotated interval plots
   --skip-preflight       Skip preflight checks
   --skip-gen             Skip scenario generation
@@ -180,6 +184,12 @@ RESULTS="$SCRIPT_DIR/results"
 THRESHOLD=4.5
 WINDOW_LEN=5
 ATTR_CYCLES_MAX=24
+# Fixed key for GROUP A only. gen_scenarios.py applies --key to whichever
+# group it is generating, so passing it to both would set the unmasked arm's
+# two groups to the SAME key and produce an identically-zero result. Group B
+# keeps its own secret: a random key per trace on the masked arm (which
+# declares fvr_secret_labels), its template's key on the unmasked arm.
+KEY_A=""
 INTERVAL_TOP_K=8
 PLOT=0
 PLOT_INTERVALS=1
@@ -197,11 +207,20 @@ while [[ $# -gt 0 ]]; do
         --seed) SEED="$2"; shift 2 ;;
         --jobs) JOBS="$2"; shift 2 ;;
         --results) RESULTS="$2"; shift 2 ;;
+        --key-a) KEY_A="$2"; shift 2 ;;
         --threshold) THRESHOLD="$2"; shift 2 ;;
         --window-len) WINDOW_LEN="$2"; shift 2 ;;
         --attr-cycles-max) ATTR_CYCLES_MAX="$2"; shift 2 ;;
         --interval-top-k) INTERVAL_TOP_K="$2"; shift 2 ;;
         --plot) PLOT=1; shift ;;
+        # Accept the per-cycle smearing that trimming to the shortest
+        # trace causes. Required on this core: the masked S-box is
+        # indexed by masked values, so the block length moves with the
+        # mask and no two traces are the same length. The driver
+        # refuses to trim without this, because a null obtained by
+        # trimming is NOT evidence of absence -- the smearing deflates
+        # |t|. Results so obtained are lower bounds.
+        --allow-trim) ALLOW_TRIM=1; shift ;;
         --no-interval-plots) PLOT_INTERVALS=0; shift ;;
         --skip-preflight) SKIP_PREFLIGHT=1; shift ;;
         --skip-gen) SKIP_GEN=1; shift ;;
@@ -248,6 +267,9 @@ MASKED_B="multi_${WORKLOAD}_masked_b"
 mkdir -p "$RESULTS"
 
 TVLA_ARGS=("--threshold" "$THRESHOLD")
+if [[ "${ALLOW_TRIM:-0}" -eq 1 ]]; then
+    TVLA_ARGS+=("--allow-trim")
+fi
 if [[ "$PLOT" -eq 1 ]]; then
     TVLA_ARGS+=("--plot")
 fi
@@ -281,10 +303,12 @@ fi
 
 if [[ "$SKIP_GEN" -eq 0 ]]; then
     banner "Step 1 - Generate Scenarios"
-    python3 gen_scenarios.py --workload "$WORKLOAD" --type unmasked --group a --n "$N_UNMASKED" --seed "$SEED"
+    KEY_A_ARGS=()
+    [[ -n "$KEY_A" ]] && KEY_A_ARGS=(--key "$KEY_A")
+    python3 gen_scenarios.py --workload "$WORKLOAD" --type unmasked --group a --n "$N_UNMASKED" --seed "$SEED" "${KEY_A_ARGS[@]+"${KEY_A_ARGS[@]}"}"
     python3 gen_scenarios.py --workload "$WORKLOAD" --type unmasked --group b --n "$N_UNMASKED" --seed "$SEED"
     if [[ "$SKIP_MASKED" -eq 0 ]]; then
-        python3 gen_scenarios.py --workload "$WORKLOAD" --type masked --group a --n "$N_MASKED" --seed "$SEED"
+        python3 gen_scenarios.py --workload "$WORKLOAD" --type masked --group a --n "$N_MASKED" --seed "$SEED" "${KEY_A_ARGS[@]+"${KEY_A_ARGS[@]}"}"
         python3 gen_scenarios.py --workload "$WORKLOAD" --type masked --group b --n "$N_MASKED" --seed "$SEED"
     fi
 fi
@@ -412,12 +436,33 @@ if [[ "$SKIP_MASKED" -eq 0 ]]; then
 fi
 
 banner "Step 8 - Run Manifest"
+# The instrumented SCOPE belongs in the manifest. A leakage null is only
+# meaningful relative to what was instrumented, and earlier campaigns did not
+# record it -- which is why their numbers cannot be compared with later ones
+# even on the same core and workload. Pin it by the simulation binary that
+# produced the traces: its path identifies the fusesoc target, and its hash
+# identifies the exact instrumented netlist.
+SCOPE_BIN="$SCRIPT_DIR/build/run_cellift_csvlog_0.1/default-verilator/Vproteus_tiny_soc"
+SCOPE_TARGET="run_cellift_csvlog"
+if [[ -x "$SCOPE_BIN" ]]; then
+    SCOPE_SHA="$(sha256sum "$SCOPE_BIN" | cut -d" " -f1)"
+    SCOPE_MTIME="$(date -u -r "$SCOPE_BIN" +%Y-%m-%dT%H:%M:%SZ)"
+else
+    SCOPE_SHA="unavailable"
+    SCOPE_MTIME="unavailable"
+fi
 MANIFEST_PATH="$RESULTS/run_manifest_refined.json"
 LEGACY_MANIFEST_PATH="$RESULTS/run_manifest.json"
 if [[ "$SKIP_MASKED" -eq 0 ]]; then
 cat > "$MANIFEST_PATH" <<EOF
 {
   "pipeline": "core_tvla_root_cause",
+  "instrumentation": {
+    "fusesoc_target": "${SCOPE_TARGET}",
+    "sim_binary": "${SCOPE_BIN}",
+    "sim_binary_sha256": "${SCOPE_SHA}",
+    "sim_binary_mtime_utc": "${SCOPE_MTIME}"
+  },
   "workload": "${WORKLOAD}",
   "n_unmasked": ${N_UNMASKED},
   "n_masked": ${N_MASKED},
@@ -453,6 +498,12 @@ else
 cat > "$MANIFEST_PATH" <<EOF
 {
   "pipeline": "core_tvla_root_cause",
+  "instrumentation": {
+    "fusesoc_target": "${SCOPE_TARGET}",
+    "sim_binary": "${SCOPE_BIN}",
+    "sim_binary_sha256": "${SCOPE_SHA}",
+    "sim_binary_mtime_utc": "${SCOPE_MTIME}"
+  },
   "workload": "${WORKLOAD}",
   "n_unmasked": ${N_UNMASKED},
   "simlen": ${SIMLEN},

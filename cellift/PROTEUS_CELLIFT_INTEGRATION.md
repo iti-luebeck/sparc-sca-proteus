@@ -106,7 +106,7 @@ cellift-proteus/
     └── ── Build outputs ──────────────────────────────────────────────────
         ├── traces/                     # VCD output directory
         └── build/
-            ├── run_cellift_trace_0.1/      # CellIFT -O0 binary (~235MB)
+            ├── run_cellift_trace_0.1/      # CellIFT debug binary, -g (unused by the flow)
             ├── run_cellift_fasttrace_0.1/  # CellIFT -O2 binary (~14MB)
             ├── run_cellift_csvlog_0.1/     # CellIFT CSV binary (~14MB)
             └── run_vanilla_trace_0.1/      # Vanilla binary (~25MB)
@@ -325,7 +325,7 @@ Running TVLA on `scenario_aes128_unmasked_key1` vs `scenario_aes128_unmasked_key
 ## Building Binaries
 
 ```bash
-source /mnt/nvme1n1p1/cellift-meta-leakage/env.sh
+source env.sh
 
 # Fast CellIFT binary (used by run_cellift_sim.sh and run_tvla.sh)
 fusesoc --cores-root=. run --build run_cellift_fasttrace

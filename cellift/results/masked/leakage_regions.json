@@ -1,0 +1,1341 @@
+{
+  "metadata": {
+    "first_cycle": 0,
+    "last_cycle": 2994,
+    "total_cycles": 2995,
+    "welch_threshold": 4.5,
+    "region_bases": [
+      "episode",
+      "strict_welch"
+    ]
+  },
+  "counters": {
+    "leakage_counter_t0": {
+      "episode_regions": [],
+      "strict_welch_regions": [],
+      "overlap": {
+        "episode_cycle_count": 0,
+        "strict_cycle_count": 0,
+        "intersection_cycle_count": 0,
+        "union_cycle_count": 0,
+        "jaccard": 0.0,
+        "strict_covered_by_episode": 0.0,
+        "episode_covered_by_strict": 0.0
+      }
+    },
+    "hamming_weight_counter_t0": {
+      "episode_regions": [
+        {
+          "start_cycle": 39,
+          "end_cycle": 110,
+          "duration": 72,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 280.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 78,
+          "det_leak_cycles": 68,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 132,
+          "end_cycle": 133,
+          "duration": 2,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 140.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 132,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 158,
+          "end_cycle": 159,
+          "duration": 2,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 77.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 158,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 184,
+          "end_cycle": 185,
+          "duration": 2,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 99.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 184,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 209,
+          "end_cycle": 291,
+          "duration": 83,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 226.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 225,
+          "det_leak_cycles": 83,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 299,
+          "end_cycle": 306,
+          "duration": 8,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 55.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 301,
+          "det_leak_cycles": 8,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 314,
+          "end_cycle": 383,
+          "duration": 70,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 330.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 351,
+          "det_leak_cycles": 70,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 420,
+          "end_cycle": 421,
+          "duration": 2,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 77.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 420,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 452,
+          "end_cycle": 2994,
+          "duration": 2543,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 848.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": 4.164048165499606,
+          "peak_cycle": 2796,
+          "det_leak_cycles": 1916,
+          "stoch_leak_cycles": 616
+        }
+      ],
+      "strict_welch_regions": [
+        {
+          "start_cycle": 2291,
+          "end_cycle": 2325,
+          "duration": 35,
+          "peak_cycle": 2325,
+          "peak_welch_t": 246.0,
+          "peak_magnitude": 516.0,
+          "peak_cohens_d": 246.0
+        },
+        {
+          "start_cycle": 2338,
+          "end_cycle": 2339,
+          "duration": 2,
+          "peak_cycle": 2338,
+          "peak_welch_t": 13.761904761904763,
+          "peak_magnitude": 289.0,
+          "peak_cohens_d": 13.761904761904763
+        },
+        {
+          "start_cycle": 2342,
+          "end_cycle": 2351,
+          "duration": 10,
+          "peak_cycle": 2346,
+          "peak_welch_t": 103.5,
+          "peak_magnitude": 480.0,
+          "peak_cohens_d": 103.5
+        },
+        {
+          "start_cycle": 2354,
+          "end_cycle": 2358,
+          "duration": 5,
+          "peak_cycle": 2354,
+          "peak_welch_t": 49.25,
+          "peak_magnitude": 197.0,
+          "peak_cohens_d": 49.25
+        },
+        {
+          "start_cycle": 2360,
+          "end_cycle": 2376,
+          "duration": 17,
+          "peak_cycle": 2376,
+          "peak_welch_t": 194.0,
+          "peak_magnitude": 448.0,
+          "peak_cohens_d": 194.0
+        },
+        {
+          "start_cycle": 2384,
+          "end_cycle": 2385,
+          "duration": 2,
+          "peak_cycle": 2384,
+          "peak_welch_t": 17.571428571428573,
+          "peak_magnitude": 676.5,
+          "peak_cohens_d": 17.571428571428573
+        },
+        {
+          "start_cycle": 2395,
+          "end_cycle": 2403,
+          "duration": 9,
+          "peak_cycle": 2402,
+          "peak_welch_t": 229.0,
+          "peak_magnitude": 343.5,
+          "peak_cohens_d": 229.0
+        },
+        {
+          "start_cycle": 2405,
+          "end_cycle": 2413,
+          "duration": 9,
+          "peak_cycle": 2407,
+          "peak_welch_t": 201.66666666666666,
+          "peak_magnitude": 302.5,
+          "peak_cohens_d": 201.66666666666666
+        },
+        {
+          "start_cycle": 2415,
+          "end_cycle": 2432,
+          "duration": 18,
+          "peak_cycle": 2428,
+          "peak_welch_t": 157.0,
+          "peak_magnitude": 235.5,
+          "peak_cohens_d": 157.0
+        },
+        {
+          "start_cycle": 2434,
+          "end_cycle": 2442,
+          "duration": 9,
+          "peak_cycle": 2434,
+          "peak_welch_t": 15.166666666666666,
+          "peak_magnitude": 200.5,
+          "peak_cohens_d": 15.166666666666666
+        },
+        {
+          "start_cycle": 2446,
+          "end_cycle": 2446,
+          "duration": 1,
+          "peak_cycle": 2446,
+          "peak_welch_t": 8.597853041491051,
+          "peak_magnitude": 93.0,
+          "peak_cohens_d": 8.597853041491051
+        },
+        {
+          "start_cycle": 2448,
+          "end_cycle": 2448,
+          "duration": 1,
+          "peak_cycle": 2448,
+          "peak_welch_t": 5.740009792526547,
+          "peak_magnitude": 35.5,
+          "peak_cohens_d": 5.740009792526547
+        },
+        {
+          "start_cycle": 2451,
+          "end_cycle": 2451,
+          "duration": 1,
+          "peak_cycle": 2451,
+          "peak_welch_t": 7.033533126053657,
+          "peak_magnitude": 43.5,
+          "peak_cohens_d": 7.033533126053657
+        },
+        {
+          "start_cycle": 2454,
+          "end_cycle": 2455,
+          "duration": 2,
+          "peak_cycle": 2455,
+          "peak_welch_t": 6.5484618759809905,
+          "peak_magnitude": 40.5,
+          "peak_cohens_d": 6.5484618759809905
+        },
+        {
+          "start_cycle": 2457,
+          "end_cycle": 2485,
+          "duration": 29,
+          "peak_cycle": 2479,
+          "peak_welch_t": 194.33333333333334,
+          "peak_magnitude": 291.5,
+          "peak_cohens_d": 194.33333333333334
+        },
+        {
+          "start_cycle": 2487,
+          "end_cycle": 2488,
+          "duration": 2,
+          "peak_cycle": 2487,
+          "peak_welch_t": 17.68520351473695,
+          "peak_magnitude": 310.5,
+          "peak_cohens_d": 17.68520351473695
+        },
+        {
+          "start_cycle": 2491,
+          "end_cycle": 2493,
+          "duration": 3,
+          "peak_cycle": 2493,
+          "peak_welch_t": 11.166666666666666,
+          "peak_magnitude": 67.0,
+          "peak_cohens_d": 11.166666666666666
+        },
+        {
+          "start_cycle": 2495,
+          "end_cycle": 2507,
+          "duration": 13,
+          "peak_cycle": 2504,
+          "peak_welch_t": 22.17605371770564,
+          "peak_magnitude": 180.5,
+          "peak_cohens_d": 22.17605371770564
+        },
+        {
+          "start_cycle": 2509,
+          "end_cycle": 2514,
+          "duration": 6,
+          "peak_cycle": 2514,
+          "peak_welch_t": 19.5,
+          "peak_magnitude": 100.0,
+          "peak_cohens_d": 19.5
+        },
+        {
+          "start_cycle": 2518,
+          "end_cycle": 2519,
+          "duration": 2,
+          "peak_cycle": 2518,
+          "peak_welch_t": 9.52,
+          "peak_magnitude": 238.0,
+          "peak_cohens_d": 9.52
+        },
+        {
+          "start_cycle": 2521,
+          "end_cycle": 2522,
+          "duration": 2,
+          "peak_cycle": 2521,
+          "peak_welch_t": 59.54545454545455,
+          "peak_magnitude": 327.5,
+          "peak_cohens_d": 59.54545454545455
+        },
+        {
+          "start_cycle": 2538,
+          "end_cycle": 2539,
+          "duration": 2,
+          "peak_cycle": 2538,
+          "peak_welch_t": 9.424242424242424,
+          "peak_magnitude": 155.5,
+          "peak_cohens_d": 9.424242424242424
+        },
+        {
+          "start_cycle": 2555,
+          "end_cycle": 2556,
+          "duration": 2,
+          "peak_cycle": 2555,
+          "peak_welch_t": 6.636363636363637,
+          "peak_magnitude": 36.5,
+          "peak_cohens_d": 6.636363636363637
+        },
+        {
+          "start_cycle": 2565,
+          "end_cycle": 2585,
+          "duration": 21,
+          "peak_cycle": 2575,
+          "peak_welch_t": 355.0,
+          "peak_magnitude": 296.0,
+          "peak_cohens_d": 355.0
+        },
+        {
+          "start_cycle": 2587,
+          "end_cycle": 2588,
+          "duration": 2,
+          "peak_cycle": 2588,
+          "peak_welch_t": 83.0,
+          "peak_magnitude": 41.5,
+          "peak_cohens_d": 83.0
+        },
+        {
+          "start_cycle": 2590,
+          "end_cycle": 2597,
+          "duration": 8,
+          "peak_cycle": 2595,
+          "peak_welch_t": 337.0,
+          "peak_magnitude": 168.5,
+          "peak_cohens_d": 337.0
+        },
+        {
+          "start_cycle": 2606,
+          "end_cycle": 2607,
+          "duration": 2,
+          "peak_cycle": 2607,
+          "peak_welch_t": 27.0,
+          "peak_magnitude": 324.0,
+          "peak_cohens_d": 27.0
+        },
+        {
+          "start_cycle": 2613,
+          "end_cycle": 2616,
+          "duration": 4,
+          "peak_cycle": 2616,
+          "peak_welch_t": 40.069384267237695,
+          "peak_magnitude": 170.0,
+          "peak_cohens_d": 40.069384267237695
+        },
+        {
+          "start_cycle": 2618,
+          "end_cycle": 2624,
+          "duration": 7,
+          "peak_cycle": 2622,
+          "peak_welch_t": 148.6560304347435,
+          "peak_magnitude": 379.0,
+          "peak_cohens_d": 148.6560304347435
+        },
+        {
+          "start_cycle": 2627,
+          "end_cycle": 2648,
+          "duration": 22,
+          "peak_cycle": 2647,
+          "peak_welch_t": 421.0,
+          "peak_magnitude": 222.0,
+          "peak_cohens_d": 421.0
+        },
+        {
+          "start_cycle": 2650,
+          "end_cycle": 2665,
+          "duration": 16,
+          "peak_cycle": 2661,
+          "peak_welch_t": 243.0,
+          "peak_magnitude": 406.5,
+          "peak_cohens_d": 243.0
+        },
+        {
+          "start_cycle": 2667,
+          "end_cycle": 2677,
+          "duration": 11,
+          "peak_cycle": 2676,
+          "peak_welch_t": 22.193863286223234,
+          "peak_magnitude": 287.0,
+          "peak_cohens_d": 22.193863286223234
+        },
+        {
+          "start_cycle": 2679,
+          "end_cycle": 2682,
+          "duration": 4,
+          "peak_cycle": 2679,
+          "peak_welch_t": 23.18025721005538,
+          "peak_magnitude": 70.5,
+          "peak_cohens_d": 23.18025721005538
+        },
+        {
+          "start_cycle": 2685,
+          "end_cycle": 2697,
+          "duration": 13,
+          "peak_cycle": 2690,
+          "peak_welch_t": 54.666666666666664,
+          "peak_magnitude": 164.0,
+          "peak_cohens_d": 54.666666666666664
+        },
+        {
+          "start_cycle": 2701,
+          "end_cycle": 2701,
+          "duration": 1,
+          "peak_cycle": 2701,
+          "peak_welch_t": 7.074074074074074,
+          "peak_magnitude": 191.0,
+          "peak_cohens_d": 7.074074074074074
+        },
+        {
+          "start_cycle": 2703,
+          "end_cycle": 2744,
+          "duration": 42,
+          "peak_cycle": 2741,
+          "peak_welch_t": 57.24,
+          "peak_magnitude": 715.5,
+          "peak_cohens_d": 57.24
+        },
+        {
+          "start_cycle": 2746,
+          "end_cycle": 2753,
+          "duration": 8,
+          "peak_cycle": 2747,
+          "peak_welch_t": 95.72727272727273,
+          "peak_magnitude": 620.0,
+          "peak_cohens_d": 95.72727272727273
+        }
+      ],
+      "overlap": {
+        "episode_cycle_count": 2784,
+        "strict_cycle_count": 343,
+        "intersection_cycle_count": 343,
+        "union_cycle_count": 2784,
+        "jaccard": 0.12320402298850575,
+        "strict_covered_by_episode": 1.0,
+        "episode_covered_by_strict": 0.12320402298850575
+      }
+    },
+    "hamming_distance_counter_t0": {
+      "episode_regions": [
+        {
+          "start_cycle": 39,
+          "end_cycle": 71,
+          "duration": 33,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 78.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 39,
+          "det_leak_cycles": 33,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 77,
+          "end_cycle": 109,
+          "duration": 33,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 18.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 77,
+          "det_leak_cycles": 33,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 132,
+          "end_cycle": 132,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 140.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 132,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 158,
+          "end_cycle": 158,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 77.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 158,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 184,
+          "end_cycle": 184,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 99.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 184,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 209,
+          "end_cycle": 257,
+          "duration": 49,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 75.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 210,
+          "det_leak_cycles": 49,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 264,
+          "end_cycle": 270,
+          "duration": 7,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 33.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 266,
+          "det_leak_cycles": 4,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 299,
+          "end_cycle": 305,
+          "duration": 7,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 55.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 301,
+          "det_leak_cycles": 4,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 314,
+          "end_cycle": 380,
+          "duration": 67,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 60.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 314,
+          "det_leak_cycles": 66,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 420,
+          "end_cycle": 422,
+          "duration": 3,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 77.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 420,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 452,
+          "end_cycle": 2994,
+          "duration": 2543,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 815.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": 9.797258375499778,
+          "peak_cycle": 2758,
+          "det_leak_cycles": 1947,
+          "stoch_leak_cycles": 588
+        }
+      ],
+      "strict_welch_regions": [
+        {
+          "start_cycle": 2291,
+          "end_cycle": 2303,
+          "duration": 13,
+          "peak_cycle": 2303,
+          "peak_welch_t": 59.6,
+          "peak_magnitude": 459.0,
+          "peak_cohens_d": 59.6
+        },
+        {
+          "start_cycle": 2305,
+          "end_cycle": 2305,
+          "duration": 1,
+          "peak_cycle": 2305,
+          "peak_welch_t": 21.8,
+          "peak_magnitude": 109.0,
+          "peak_cohens_d": 21.8
+        },
+        {
+          "start_cycle": 2308,
+          "end_cycle": 2324,
+          "duration": 17,
+          "peak_cycle": 2324,
+          "peak_welch_t": 165.33333333333334,
+          "peak_magnitude": 496.0,
+          "peak_cohens_d": 165.33333333333334
+        },
+        {
+          "start_cycle": 2326,
+          "end_cycle": 2326,
+          "duration": 1,
+          "peak_cycle": 2326,
+          "peak_welch_t": 83.33333333333333,
+          "peak_magnitude": 250.0,
+          "peak_cohens_d": 83.33333333333333
+        },
+        {
+          "start_cycle": 2338,
+          "end_cycle": 2338,
+          "duration": 1,
+          "peak_cycle": 2338,
+          "peak_welch_t": 5.0,
+          "peak_magnitude": 105.0,
+          "peak_cohens_d": 5.0
+        },
+        {
+          "start_cycle": 2340,
+          "end_cycle": 2340,
+          "duration": 1,
+          "peak_cycle": 2340,
+          "peak_welch_t": 8.095238095238095,
+          "peak_magnitude": 170.0,
+          "peak_cohens_d": 8.095238095238095
+        },
+        {
+          "start_cycle": 2342,
+          "end_cycle": 2345,
+          "duration": 4,
+          "peak_cycle": 2343,
+          "peak_welch_t": 88.75,
+          "peak_magnitude": 648.0,
+          "peak_cohens_d": 88.75
+        },
+        {
+          "start_cycle": 2347,
+          "end_cycle": 2364,
+          "duration": 18,
+          "peak_cycle": 2348,
+          "peak_welch_t": 113.8,
+          "peak_magnitude": 569.0,
+          "peak_cohens_d": 113.8
+        },
+        {
+          "start_cycle": 2366,
+          "end_cycle": 2371,
+          "duration": 6,
+          "peak_cycle": 2367,
+          "peak_welch_t": 48.6,
+          "peak_magnitude": 472.0,
+          "peak_cohens_d": 48.6
+        },
+        {
+          "start_cycle": 2373,
+          "end_cycle": 2375,
+          "duration": 3,
+          "peak_cycle": 2375,
+          "peak_welch_t": 115.33333333333333,
+          "peak_magnitude": 346.0,
+          "peak_cohens_d": 115.33333333333333
+        },
+        {
+          "start_cycle": 2377,
+          "end_cycle": 2377,
+          "duration": 1,
+          "peak_cycle": 2377,
+          "peak_welch_t": 41.0,
+          "peak_magnitude": 123.0,
+          "peak_cohens_d": 41.0
+        },
+        {
+          "start_cycle": 2384,
+          "end_cycle": 2384,
+          "duration": 1,
+          "peak_cycle": 2384,
+          "peak_welch_t": 9.311688311688311,
+          "peak_magnitude": 358.5,
+          "peak_cohens_d": 9.311688311688311
+        },
+        {
+          "start_cycle": 2386,
+          "end_cycle": 2386,
+          "duration": 1,
+          "peak_cycle": 2386,
+          "peak_welch_t": 16.792207792207794,
+          "peak_magnitude": 646.5,
+          "peak_cohens_d": 16.792207792207794
+        },
+        {
+          "start_cycle": 2389,
+          "end_cycle": 2389,
+          "duration": 1,
+          "peak_cycle": 2389,
+          "peak_welch_t": 10.619047619047619,
+          "peak_magnitude": 223.0,
+          "peak_cohens_d": 10.619047619047619
+        },
+        {
+          "start_cycle": 2395,
+          "end_cycle": 2396,
+          "duration": 2,
+          "peak_cycle": 2395,
+          "peak_welch_t": 173.66666666666666,
+          "peak_magnitude": 572.0,
+          "peak_cohens_d": 173.66666666666666
+        },
+        {
+          "start_cycle": 2398,
+          "end_cycle": 2415,
+          "duration": 18,
+          "peak_cycle": 2399,
+          "peak_welch_t": 103.0,
+          "peak_magnitude": 412.0,
+          "peak_cohens_d": 103.0
+        },
+        {
+          "start_cycle": 2418,
+          "end_cycle": 2422,
+          "duration": 5,
+          "peak_cycle": 2418,
+          "peak_welch_t": 63.75,
+          "peak_magnitude": 456.0,
+          "peak_cohens_d": 63.75
+        },
+        {
+          "start_cycle": 2424,
+          "end_cycle": 2427,
+          "duration": 4,
+          "peak_cycle": 2426,
+          "peak_welch_t": 70.5,
+          "peak_magnitude": 282.0,
+          "peak_cohens_d": 70.5
+        },
+        {
+          "start_cycle": 2429,
+          "end_cycle": 2452,
+          "duration": 24,
+          "peak_cycle": 2434,
+          "peak_welch_t": 303.0,
+          "peak_magnitude": 535.5,
+          "peak_cohens_d": 303.0
+        },
+        {
+          "start_cycle": 2454,
+          "end_cycle": 2457,
+          "duration": 4,
+          "peak_cycle": 2455,
+          "peak_welch_t": 57.480943133610914,
+          "peak_magnitude": 237.0,
+          "peak_cohens_d": 57.480943133610914
+        },
+        {
+          "start_cycle": 2459,
+          "end_cycle": 2462,
+          "duration": 4,
+          "peak_cycle": 2461,
+          "peak_welch_t": 7.276068751089989,
+          "peak_magnitude": 30.0,
+          "peak_cohens_d": 7.276068751089989
+        },
+        {
+          "start_cycle": 2464,
+          "end_cycle": 2464,
+          "duration": 1,
+          "peak_cycle": 2464,
+          "peak_welch_t": 43.379718763495916,
+          "peak_magnitude": 194.0,
+          "peak_cohens_d": 43.379718763495916
+        },
+        {
+          "start_cycle": 2466,
+          "end_cycle": 2467,
+          "duration": 2,
+          "peak_cycle": 2466,
+          "peak_welch_t": 13.75,
+          "peak_magnitude": 302.0,
+          "peak_cohens_d": 13.75
+        },
+        {
+          "start_cycle": 2469,
+          "end_cycle": 2478,
+          "duration": 10,
+          "peak_cycle": 2475,
+          "peak_welch_t": 65.75,
+          "peak_magnitude": 314.0,
+          "peak_cohens_d": 65.75
+        },
+        {
+          "start_cycle": 2480,
+          "end_cycle": 2480,
+          "duration": 1,
+          "peak_cycle": 2480,
+          "peak_welch_t": 13.0,
+          "peak_magnitude": 78.0,
+          "peak_cohens_d": 13.0
+        },
+        {
+          "start_cycle": 2482,
+          "end_cycle": 2482,
+          "duration": 1,
+          "peak_cycle": 2482,
+          "peak_welch_t": 106.0,
+          "peak_magnitude": 106.0,
+          "peak_cohens_d": 106.0
+        },
+        {
+          "start_cycle": 2484,
+          "end_cycle": 2515,
+          "duration": 32,
+          "peak_cycle": 2492,
+          "peak_welch_t": 343.0,
+          "peak_magnitude": 487.5,
+          "peak_cohens_d": 343.0
+        },
+        {
+          "start_cycle": 2518,
+          "end_cycle": 2518,
+          "duration": 1,
+          "peak_cycle": 2518,
+          "peak_welch_t": 7.84,
+          "peak_magnitude": 196.0,
+          "peak_cohens_d": 7.84
+        },
+        {
+          "start_cycle": 2521,
+          "end_cycle": 2521,
+          "duration": 1,
+          "peak_cycle": 2521,
+          "peak_welch_t": 113.18181818181819,
+          "peak_magnitude": 622.5,
+          "peak_cohens_d": 113.18181818181819
+        },
+        {
+          "start_cycle": 2523,
+          "end_cycle": 2523,
+          "duration": 1,
+          "peak_cycle": 2523,
+          "peak_welch_t": 67.0,
+          "peak_magnitude": 368.5,
+          "peak_cohens_d": 67.0
+        },
+        {
+          "start_cycle": 2538,
+          "end_cycle": 2538,
+          "duration": 1,
+          "peak_cycle": 2538,
+          "peak_welch_t": 7.96969696969697,
+          "peak_magnitude": 131.5,
+          "peak_cohens_d": 7.96969696969697
+        },
+        {
+          "start_cycle": 2540,
+          "end_cycle": 2540,
+          "duration": 1,
+          "peak_cycle": 2540,
+          "peak_welch_t": 22.636363636363637,
+          "peak_magnitude": 373.5,
+          "peak_cohens_d": 22.636363636363637
+        },
+        {
+          "start_cycle": 2555,
+          "end_cycle": 2555,
+          "duration": 1,
+          "peak_cycle": 2555,
+          "peak_welch_t": 105.36363636363636,
+          "peak_magnitude": 579.5,
+          "peak_cohens_d": 105.36363636363636
+        },
+        {
+          "start_cycle": 2557,
+          "end_cycle": 2557,
+          "duration": 1,
+          "peak_cycle": 2557,
+          "peak_welch_t": 73.54545454545455,
+          "peak_magnitude": 404.5,
+          "peak_cohens_d": 73.54545454545455
+        },
+        {
+          "start_cycle": 2565,
+          "end_cycle": 2567,
+          "duration": 3,
+          "peak_cycle": 2566,
+          "peak_welch_t": 150.5,
+          "peak_magnitude": 301.0,
+          "peak_cohens_d": 150.5
+        },
+        {
+          "start_cycle": 2572,
+          "end_cycle": 2572,
+          "duration": 1,
+          "peak_cycle": 2572,
+          "peak_welch_t": 104.63636363636364,
+          "peak_magnitude": 575.5,
+          "peak_cohens_d": 104.63636363636364
+        },
+        {
+          "start_cycle": 2574,
+          "end_cycle": 2574,
+          "duration": 1,
+          "peak_cycle": 2574,
+          "peak_welch_t": 90.63636363636364,
+          "peak_magnitude": 498.5,
+          "peak_cohens_d": 90.63636363636364
+        },
+        {
+          "start_cycle": 2598,
+          "end_cycle": 2598,
+          "duration": 1,
+          "peak_cycle": 2598,
+          "peak_welch_t": 123.0,
+          "peak_magnitude": 61.5,
+          "peak_cohens_d": 123.0
+        },
+        {
+          "start_cycle": 2606,
+          "end_cycle": 2606,
+          "duration": 1,
+          "peak_cycle": 2606,
+          "peak_welch_t": 47.75,
+          "peak_magnitude": 573.0,
+          "peak_cohens_d": 47.75
+        },
+        {
+          "start_cycle": 2608,
+          "end_cycle": 2608,
+          "duration": 1,
+          "peak_cycle": 2608,
+          "peak_welch_t": 32.666666666666664,
+          "peak_magnitude": 392.0,
+          "peak_cohens_d": 32.666666666666664
+        },
+        {
+          "start_cycle": 2613,
+          "end_cycle": 2622,
+          "duration": 10,
+          "peak_cycle": 2614,
+          "peak_welch_t": 86.66666666666667,
+          "peak_magnitude": 692.0,
+          "peak_cohens_d": 86.66666666666667
+        },
+        {
+          "start_cycle": 2624,
+          "end_cycle": 2638,
+          "duration": 15,
+          "peak_cycle": 2629,
+          "peak_welch_t": 84.0,
+          "peak_magnitude": 387.5,
+          "peak_cohens_d": 84.0
+        },
+        {
+          "start_cycle": 2640,
+          "end_cycle": 2642,
+          "duration": 3,
+          "peak_cycle": 2640,
+          "peak_welch_t": 88.0,
+          "peak_magnitude": 264.0,
+          "peak_cohens_d": 88.0
+        },
+        {
+          "start_cycle": 2644,
+          "end_cycle": 2647,
+          "duration": 4,
+          "peak_cycle": 2647,
+          "peak_welch_t": 105.0,
+          "peak_magnitude": 274.0,
+          "peak_cohens_d": 105.0
+        },
+        {
+          "start_cycle": 2649,
+          "end_cycle": 2662,
+          "duration": 14,
+          "peak_cycle": 2649,
+          "peak_welch_t": 131.0,
+          "peak_magnitude": 445.0,
+          "peak_cohens_d": 131.0
+        },
+        {
+          "start_cycle": 2664,
+          "end_cycle": 2664,
+          "duration": 1,
+          "peak_cycle": 2664,
+          "peak_welch_t": 74.4,
+          "peak_magnitude": 372.0,
+          "peak_cohens_d": 74.4
+        },
+        {
+          "start_cycle": 2666,
+          "end_cycle": 2666,
+          "duration": 1,
+          "peak_cycle": 2666,
+          "peak_welch_t": 6.759527951736838,
+          "peak_magnitude": 63.5,
+          "peak_cohens_d": 6.759527951736838
+        },
+        {
+          "start_cycle": 2669,
+          "end_cycle": 2669,
+          "duration": 1,
+          "peak_cycle": 2669,
+          "peak_welch_t": 12.611852501889315,
+          "peak_magnitude": 52.0,
+          "peak_cohens_d": 12.611852501889315
+        },
+        {
+          "start_cycle": 2673,
+          "end_cycle": 2673,
+          "duration": 1,
+          "peak_cycle": 2673,
+          "peak_welch_t": 5.681740083721872,
+          "peak_magnitude": 276.5,
+          "peak_cohens_d": 5.681740083721872
+        },
+        {
+          "start_cycle": 2675,
+          "end_cycle": 2675,
+          "duration": 1,
+          "peak_cycle": 2675,
+          "peak_welch_t": 6.77082588638827,
+          "peak_magnitude": 329.5,
+          "peak_cohens_d": 6.77082588638827
+        },
+        {
+          "start_cycle": 2677,
+          "end_cycle": 2681,
+          "duration": 5,
+          "peak_cycle": 2680,
+          "peak_welch_t": 50.932481257629924,
+          "peak_magnitude": 210.0,
+          "peak_cohens_d": 50.932481257629924
+        },
+        {
+          "start_cycle": 2683,
+          "end_cycle": 2698,
+          "duration": 16,
+          "peak_cycle": 2692,
+          "peak_welch_t": 420.0,
+          "peak_magnitude": 420.0,
+          "peak_cohens_d": 420.0
+        },
+        {
+          "start_cycle": 2701,
+          "end_cycle": 2707,
+          "duration": 7,
+          "peak_cycle": 2707,
+          "peak_welch_t": 70.99515828561832,
+          "peak_magnitude": 635.0,
+          "peak_cohens_d": 70.99515828561832
+        },
+        {
+          "start_cycle": 2709,
+          "end_cycle": 2711,
+          "duration": 3,
+          "peak_cycle": 2709,
+          "peak_welch_t": 62.574191259373904,
+          "peak_magnitude": 258.0,
+          "peak_cohens_d": 62.574191259373904
+        },
+        {
+          "start_cycle": 2713,
+          "end_cycle": 2718,
+          "duration": 6,
+          "peak_cycle": 2713,
+          "peak_welch_t": 53.11530188295692,
+          "peak_magnitude": 440.0,
+          "peak_cohens_d": 53.11530188295692
+        },
+        {
+          "start_cycle": 2721,
+          "end_cycle": 2722,
+          "duration": 2,
+          "peak_cycle": 2721,
+          "peak_welch_t": 6.077701994871215,
+          "peak_magnitude": 24.5,
+          "peak_cohens_d": 6.077701994871215
+        },
+        {
+          "start_cycle": 2724,
+          "end_cycle": 2727,
+          "duration": 4,
+          "peak_cycle": 2724,
+          "peak_welch_t": 7.566118809941717,
+          "peak_magnitude": 30.5,
+          "peak_cohens_d": 7.566118809941717
+        },
+        {
+          "start_cycle": 2732,
+          "end_cycle": 2737,
+          "duration": 6,
+          "peak_cycle": 2737,
+          "peak_welch_t": 333.0,
+          "peak_magnitude": 166.5,
+          "peak_cohens_d": 333.0
+        },
+        {
+          "start_cycle": 2739,
+          "end_cycle": 2741,
+          "duration": 3,
+          "peak_cycle": 2740,
+          "peak_welch_t": 80.33333333333333,
+          "peak_magnitude": 494.5,
+          "peak_cohens_d": 80.33333333333333
+        },
+        {
+          "start_cycle": 2748,
+          "end_cycle": 2750,
+          "duration": 3,
+          "peak_cycle": 2750,
+          "peak_welch_t": 147.66666666666666,
+          "peak_magnitude": 221.5,
+          "peak_cohens_d": 147.66666666666666
+        },
+        {
+          "start_cycle": 2754,
+          "end_cycle": 2754,
+          "duration": 1,
+          "peak_cycle": 2754,
+          "peak_welch_t": 43.0,
+          "peak_magnitude": 258.0,
+          "peak_cohens_d": 43.0
+        },
+        {
+          "start_cycle": 2756,
+          "end_cycle": 2756,
+          "duration": 1,
+          "peak_cycle": 2756,
+          "peak_welch_t": 15.745421757195919,
+          "peak_magnitude": 627.5,
+          "peak_cohens_d": 15.745421757195919
+        },
+        {
+          "start_cycle": 2758,
+          "end_cycle": 2759,
+          "duration": 2,
+          "peak_cycle": 2758,
+          "peak_welch_t": 9.797258375499778,
+          "peak_magnitude": 815.0,
+          "peak_cohens_d": 9.797258375499778
+        },
+        {
+          "start_cycle": 2762,
+          "end_cycle": 2762,
+          "duration": 1,
+          "peak_cycle": 2762,
+          "peak_welch_t": 7.61634272409281,
+          "peak_magnitude": 324.5,
+          "peak_cohens_d": 7.61634272409281
+        },
+        {
+          "start_cycle": 2767,
+          "end_cycle": 2767,
+          "duration": 1,
+          "peak_cycle": 2767,
+          "peak_welch_t": 7.763568379657912,
+          "peak_magnitude": 641.0,
+          "peak_cohens_d": 7.763568379657912
+        },
+        {
+          "start_cycle": 2795,
+          "end_cycle": 2795,
+          "duration": 1,
+          "peak_cycle": 2795,
+          "peak_welch_t": 5.525700215453947,
+          "peak_magnitude": 293.5,
+          "peak_cohens_d": 5.525700215453947
+        },
+        {
+          "start_cycle": 2800,
+          "end_cycle": 2800,
+          "duration": 1,
+          "peak_cycle": 2800,
+          "peak_welch_t": 7.040523668400917,
+          "peak_magnitude": 231.0,
+          "peak_cohens_d": 7.040523668400917
+        },
+        {
+          "start_cycle": 2802,
+          "end_cycle": 2803,
+          "duration": 2,
+          "peak_cycle": 2803,
+          "peak_welch_t": 12.452051990530924,
+          "peak_magnitude": 225.0,
+          "peak_cohens_d": 12.452051990530924
+        },
+        {
+          "start_cycle": 2805,
+          "end_cycle": 2805,
+          "duration": 1,
+          "peak_cycle": 2805,
+          "peak_welch_t": 5.248886348499213,
+          "peak_magnitude": 138.5,
+          "peak_cohens_d": 5.248886348499213
+        },
+        {
+          "start_cycle": 2807,
+          "end_cycle": 2807,
+          "duration": 1,
+          "peak_cycle": 2807,
+          "peak_welch_t": 4.746649968196266,
+          "peak_magnitude": 39.5,
+          "peak_cohens_d": 4.746649968196266
+        },
+        {
+          "start_cycle": 2810,
+          "end_cycle": 2810,
+          "duration": 1,
+          "peak_cycle": 2810,
+          "peak_welch_t": 16.37824956530854,
+          "peak_magnitude": 75.5,
+          "peak_cohens_d": 16.37824956530854
+        },
+        {
+          "start_cycle": 2814,
+          "end_cycle": 2814,
+          "duration": 1,
+          "peak_cycle": 2814,
+          "peak_welch_t": 6.490229342872016,
+          "peak_magnitude": 74.0,
+          "peak_cohens_d": 6.490229342872016
+        },
+        {
+          "start_cycle": 2820,
+          "end_cycle": 2820,
+          "duration": 1,
+          "peak_cycle": 2820,
+          "peak_welch_t": 5.391803346030552,
+          "peak_magnitude": 260.5,
+          "peak_cohens_d": 5.391803346030552
+        },
+        {
+          "start_cycle": 2839,
+          "end_cycle": 2842,
+          "duration": 4,
+          "peak_cycle": 2839,
+          "peak_welch_t": 27.72724292099739,
+          "peak_magnitude": 62.0,
+          "peak_cohens_d": 27.72724292099739
+        },
+        {
+          "start_cycle": 2846,
+          "end_cycle": 2846,
+          "duration": 1,
+          "peak_cycle": 2846,
+          "peak_welch_t": 6.193016923645,
+          "peak_magnitude": 438.0,
+          "peak_cohens_d": 6.193016923645
+        },
+        {
+          "start_cycle": 2895,
+          "end_cycle": 2895,
+          "duration": 1,
+          "peak_cycle": 2895,
+          "peak_welch_t": 5.742503663444456,
+          "peak_magnitude": 429.0,
+          "peak_cohens_d": 5.742503663444456
+        },
+        {
+          "start_cycle": 2970,
+          "end_cycle": 2970,
+          "duration": 1,
+          "peak_cycle": 2970,
+          "peak_welch_t": 6.916527588244754,
+          "peak_magnitude": 508.0,
+          "peak_cohens_d": 6.916527588244754
+        },
+        {
+          "start_cycle": 2988,
+          "end_cycle": 2988,
+          "duration": 1,
+          "peak_cycle": 2988,
+          "peak_welch_t": 14.368421052631579,
+          "peak_magnitude": 136.5,
+          "peak_cohens_d": 14.368421052631579
+        },
+        {
+          "start_cycle": 2990,
+          "end_cycle": 2990,
+          "duration": 1,
+          "peak_cycle": 2990,
+          "peak_welch_t": 13.095238095238095,
+          "peak_magnitude": 137.5,
+          "peak_cohens_d": 13.095238095238095
+        }
+      ],
+      "overlap": {
+        "episode_cycle_count": 2745,
+        "strict_cycle_count": 322,
+        "intersection_cycle_count": 322,
+        "union_cycle_count": 2745,
+        "jaccard": 0.11730418943533698,
+        "strict_covered_by_episode": 1.0,
+        "episode_covered_by_strict": 0.11730418943533698
+      }
+    }
+  }
+}

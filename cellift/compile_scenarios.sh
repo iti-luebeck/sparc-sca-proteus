@@ -25,8 +25,11 @@ MAKE_TC_ARGS=()
 if [[ -n "${RISCV:-}" ]]; then
     MAKE_TC_ARGS=("RISCV_PREFIX=${RISCV}/bin/riscv64-unknown-elf")
 elif ! command -v riscv64-unknown-elf-gcc >/dev/null 2>&1; then
-    CANDIDATE_TC="/mnt/nvme1n1p1/chipyard-1.11.0/.conda-env/riscv-tools/bin"
-    if [[ -x "${CANDIDATE_TC}/riscv64-unknown-elf-gcc" ]]; then
+    # SPARC_SCA_RISCV_BIN is the escape hatch for a toolchain installed outside
+    # PATH, e.g. a Chipyard conda env. This used to be a hardcoded path from the
+    # machine the scripts were written on, which nobody else has.
+    CANDIDATE_TC="${SPARC_SCA_RISCV_BIN:-}"
+    if [[ -n "${CANDIDATE_TC}" && -x "${CANDIDATE_TC}/riscv64-unknown-elf-gcc" ]]; then
         export PATH="${CANDIDATE_TC}:${PATH}"
     fi
 fi

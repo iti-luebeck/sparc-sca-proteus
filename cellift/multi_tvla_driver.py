@@ -86,12 +86,51 @@ def corrected_threshold(base_threshold: float, n_cycles: int,
     return max(base_threshold, float(z))
 
 
-def align_all(traces_a: list, traces_b: list) -> tuple[list, list, np.ndarray]:
-    """Trim all traces to the minimum common cycle count."""
-    n = min(
-        min(len(t["cycle"]) for t in traces_a),
-        min(len(t["cycle"]) for t in traces_b),
-    )
+def align_all(traces_a: list, traces_b: list,
+              max_spread: int = 0, allow_trim: bool = False
+              ) -> tuple[list, list, np.ndarray]:
+    """Trim all traces to the minimum common cycle count, loudly.
+
+    This used to trim silently and print "Aligned to N cycles", which is wrong
+    twice over: nothing is aligned -- every trace is cropped to the global
+    minimum and the tail is discarded -- and the amount discarded is
+    data-dependent, so the two groups lose different distributions of content.
+    The lost tail is the END of the cipher, i.e. the last round, which is
+    exactly where a last-round attack looks. campaign.py refuses to accept that
+    confound on the capture side; accepting it here was an inconsistency.
+
+    Measured on Rocket's masked AES (results_aes_barrier, 400 traces): lengths
+    span 26761..33640, so the trim drops ~11% of the average trace and 20% of
+    the longest. Proteus spans 41179..42019 (2%). Ibex is exactly constant, so
+    for it the trim is a genuine no-op and this function is silent.
+
+    max_spread = 0 means "no spread tolerated beyond what Ibex has"; pass
+    --allow-trim to proceed anyway, which is legitimate only once the residual
+    misalignment has been shown not to matter for the quantity under test.
+    """
+    la = [len(t["cycle"]) for t in traces_a]
+    lb = [len(t["cycle"]) for t in traces_b]
+    n = min(min(la), min(lb))
+    hi = max(max(la), max(lb))
+    spread = hi - n
+
+    if spread:
+        lost_avg = (sum(la) + sum(lb)) / (len(la) + len(lb)) - n
+        print(f"  trace length: {n}..{hi} cycles, spread {spread} "
+              f"({len(set(la + lb))} distinct lengths over "
+              f"{len(la) + len(lb)} traces)")
+        print(f"  trimming to {n} discards {lost_avg:.0f} cycles from the "
+              f"average trace and {spread} from the longest -- "
+              f"data-dependently, so the groups lose different content")
+        if spread > max_spread and not allow_trim:
+            sys.exit(
+                f"ERROR: length spread {spread} exceeds --max-spread "
+                f"{max_spread}. The per-cycle Welch test assumes trace i's "
+                f"cycle c is the same operation in every trace, which does not "
+                f"hold here. Align the traces first, or pass --allow-trim to "
+                f"accept the smearing (it DEFLATES |t|, so a null obtained "
+                f"this way is not evidence of absence)."
+            )
     traces_a = [{k: v[:n] for k, v in t.items()} for t in traces_a]
     traces_b = [{k: v[:n] for k, v in t.items()} for t in traces_b]
     return traces_a, traces_b, traces_a[0]["cycle"]
@@ -234,6 +273,14 @@ def main():
     ap.add_argument("--mc-correction", choices=["none", "bonferroni"],
                     default="none",
                     help="Multiple-comparison correction mode for per-cycle Welch threshold")
+    ap.add_argument("--max-spread", type=int, default=0,
+                    help="largest trace-length spread, in cycles, that may be "
+                         "trimmed away silently (default 0: any spread is an "
+                         "error, because the per-cycle test assumes alignment)")
+    ap.add_argument("--allow-trim", action="store_true",
+                    help="trim a spread larger than --max-spread anyway. The "
+                         "smearing deflates |t|, so a null obtained this way is "
+                         "not evidence of absence -- state it as a lower bound.")
     ap.add_argument("--alpha", type=float, default=0.05,
                     help="Family-wise alpha used when --mc-correction=bonferroni")
     ap.add_argument("--plot",       action="store_true",
@@ -258,8 +305,10 @@ def main():
     if len(traces_a) < 2 or len(traces_b) < 2:
         sys.exit("ERROR: Welch t-test requires at least 2 traces per group.")
 
-    traces_a, traces_b, cycles = align_all(traces_a, traces_b)
-    print(f"  Aligned to {len(cycles)} cycles")
+    traces_a, traces_b, cycles = align_all(
+        traces_a, traces_b, max_spread=args.max_spread,
+        allow_trim=args.allow_trim)
+    print(f"  Trimmed to {len(cycles)} cycles")
 
     if args.alpha <= 0.0 or args.alpha >= 1.0:
         sys.exit("ERROR: --alpha must be in (0, 1)")

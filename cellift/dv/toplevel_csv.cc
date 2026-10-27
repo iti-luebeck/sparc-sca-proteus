@@ -36,10 +36,6 @@ int main(int argc, char **argv, char **env) {
   Testbench *tb = new Testbench(cl_get_tracefile());
   tb->reset();
 
-#ifndef IS_VANILLA
-  auto *rootp = tb->module_->rootp;
-#endif
-
   std::ofstream csv(csvfile_env);
   if (!csv.is_open()) {
     std::cerr << "Cannot open CSVFILE: " << csvfile_env << std::endl;
@@ -52,9 +48,9 @@ int main(int argc, char **argv, char **env) {
 
 #ifndef IS_VANILLA
     csv << cycle << ","
-        << rootp->proteus_tiny_soc__DOT__leakage_counter_t0 << ","
-        << rootp->proteus_tiny_soc__DOT__hamming_weight_counter_t0 << ","
-        << rootp->proteus_tiny_soc__DOT__hamming_distance_counter_t0 << "\n";
+        << tb->module_->leakage_counter_t0 << ","
+        << tb->module_->hamming_weight_counter_t0 << ","
+        << tb->module_->hamming_distance_counter_t0 << "\n";
 #else
     csv << cycle << ",0,0,0\n";
 #endif
@@ -68,11 +64,11 @@ int main(int argc, char **argv, char **env) {
 #ifndef IS_VANILLA
   std::cout << "=== CellIFT Leakage Counters ===" << std::endl;
   std::cout << "leakage_counter_t0:          " << std::dec
-            << rootp->proteus_tiny_soc__DOT__leakage_counter_t0 << std::endl;
+            << tb->module_->leakage_counter_t0 << std::endl;
   std::cout << "hamming_weight_counter_t0:   " << std::dec
-            << rootp->proteus_tiny_soc__DOT__hamming_weight_counter_t0 << std::endl;
+            << tb->module_->hamming_weight_counter_t0 << std::endl;
   std::cout << "hamming_distance_counter_t0: " << std::dec
-            << rootp->proteus_tiny_soc__DOT__hamming_distance_counter_t0 << std::endl;
+            << tb->module_->hamming_distance_counter_t0 << std::endl;
 #endif
 
   delete tb;

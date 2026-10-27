@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "N_A": 2,
+    "N_B": 2,
+    "total_cycles": 2995,
+    "first_cycle": 0,
+    "last_cycle": 2994
+  },
+  "counters": {
+    "leakage_counter_t0": {
+      "total_leaky_cycles": 0,
+      "det_leak_cycles": 0,
+      "stoch_leak_cycles": 0,
+      "first_leaky_cycle": null,
+      "peak_magnitude": 0.0,
+      "episodes": []
+    },
+    "hamming_weight_counter_t0": {
+      "total_leaky_cycles": 2820,
+      "det_leak_cycles": 1912,
+      "stoch_leak_cycles": 908,
+      "first_leaky_cycle": 28,
+      "peak_magnitude": 644.0,
+      "episodes": [
+        {
+          "start_cycle": 28,
+          "end_cycle": 69,
+          "duration": 42,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 528.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 37,
+          "det_leak_cycles": 42,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 79,
+          "end_cycle": 80,
+          "duration": 2,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 55.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 79,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 88,
+          "end_cycle": 89,
+          "duration": 2,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 22.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 88,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 95,
+          "end_cycle": 96,
+          "duration": 2,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 11.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 95,
+          "det_leak_cycles": 2,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 115,
+          "end_cycle": 154,
+          "duration": 40,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 55.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 141,
+          "det_leak_cycles": 16,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 164,
+          "end_cycle": 236,
+          "duration": 73,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 301.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 170,
+          "det_leak_cycles": 71,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 304,
+          "end_cycle": 2994,
+          "duration": 2691,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 644.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": 142.6,
+          "peak_cycle": 531,
+          "det_leak_cycles": 1777,
+          "stoch_leak_cycles": 908
+        }
+      ]
+    },
+    "hamming_distance_counter_t0": {
+      "total_leaky_cycles": 2795,
+      "det_leak_cycles": 1888,
+      "stoch_leak_cycles": 907,
+      "first_leaky_cycle": 28,
+      "peak_magnitude": 945.0,
+      "episodes": [
+        {
+          "start_cycle": 28,
+          "end_cycle": 64,
+          "duration": 37,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 52.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 64,
+          "det_leak_cycles": 34,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 79,
+          "end_cycle": 79,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 55.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 79,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 88,
+          "end_cycle": 88,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 22.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 88,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 95,
+          "end_cycle": 95,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 11.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 95,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 115,
+          "end_cycle": 135,
+          "duration": 21,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 44.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 135,
+          "det_leak_cycles": 5,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 141,
+          "end_cycle": 141,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 55.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 141,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 147,
+          "end_cycle": 147,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 11.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 147,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 153,
+          "end_cycle": 153,
+          "duration": 1,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 11.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 153,
+          "det_leak_cycles": 1,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 164,
+          "end_cycle": 234,
+          "duration": 71,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 33.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": null,
+          "peak_cycle": 164,
+          "det_leak_cycles": 67,
+          "stoch_leak_cycles": 0
+        },
+        {
+          "start_cycle": 304,
+          "end_cycle": 2994,
+          "duration": 2691,
+          "regime_dominant": "det_leak",
+          "peak_magnitude": 945.0,
+          "peak_cohens_d": 1000.0,
+          "peak_welch_t": 783.0,
+          "peak_cycle": 529,
+          "det_leak_cycles": 1776,
+          "stoch_leak_cycles": 907
+        }
+      ]
+    }
+  }
+}

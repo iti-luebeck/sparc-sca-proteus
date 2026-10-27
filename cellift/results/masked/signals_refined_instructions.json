@@ -1,0 +1,347 @@
+{
+  "metadata": {
+    "tick_base": 7,
+    "tick_period": 5,
+    "formula": "vcd_time = tick_period * (tick_base + cycle)",
+    "vcd": "/workspace/designs/proteus/cellift/traces/vanilla_scenario_aes128_masked_key.vcd",
+    "elf": "/workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/build/app.elf"
+  },
+  "cycles": [
+    {
+      "cycle": 2291,
+      "vcd_time": 11490,
+      "fetch": {
+        "pc": "0x80000438",
+        "instruction": "or\ta1,a1,a6",
+        "source": "my_memcpy  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:62 (discriminator 33792)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:263 (discriminator 33792)"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x80000424",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2308,
+      "vcd_time": 11575,
+      "fetch": {
+        "pc": "0x80000454",
+        "instruction": "addi\ta0,a0,4",
+        "source": "my_memcpy  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:61 (discriminator 2)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:263 (discriminator 2)"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x80000424",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2342,
+      "vcd_time": 11745,
+      "fetch": {
+        "pc": "0x80000440",
+        "instruction": "or\ta2,a2,a1",
+        "source": "my_memcpy  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:62 (discriminator 33792)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:263 (discriminator 33792)"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x80000428",
+        "instruction": "lbu\ta6,0(a4)"
+      }
+    },
+    {
+      "cycle": 2347,
+      "vcd_time": 11770,
+      "fetch": {
+        "pc": "0x80000454",
+        "instruction": "addi\ta0,a0,4",
+        "source": "my_memcpy  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:61 (discriminator 2)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:263 (discriminator 2)"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x8000043c",
+        "instruction": "slli\ta2,a2,0x10"
+      }
+    },
+    {
+      "cycle": 2384,
+      "vcd_time": 11955,
+      "fetch": {
+        "pc": "0x80000428",
+        "instruction": "lbu\ta6,0(a4)",
+        "source": "my_memcpy  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:62 (discriminator 33792)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:263 (discriminator 33792)"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x80000450",
+        "instruction": "addi\ta4,a4,4"
+      }
+    },
+    {
+      "cycle": 2386,
+      "vcd_time": 11965,
+      "fetch": {
+        "pc": "0x8000045c",
+        "instruction": "addi\ta7,a3,16",
+        "source": "my_memcpy  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:61 (discriminator 2)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:263 (discriminator 2)"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x80000458",
+        "instruction": "bne\ta4,a7,80000424 <aes128_masked_encrypt+0x268>"
+      }
+    },
+    {
+      "cycle": 2395,
+      "vcd_time": 12010,
+      "fetch": {
+        "pc": "0x80000480",
+        "instruction": "or\ta2,a2,a6",
+        "source": "my_xor  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:70 (discriminator 66560)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:264 (discriminator 66560)"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x8000046c",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2429,
+      "vcd_time": 12180,
+      "fetch": {
+        "pc": "0x800004a4",
+        "instruction": "addi\ta1,a1,4",
+        "source": "my_xor  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:69 (discriminator 2)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:264 (discriminator 2)"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x8000046c",
+        "instruction": "lbu\ta2,1(a3)"
+      }
+    },
+    {
+      "cycle": 2484,
+      "vcd_time": 12455,
+      "fetch": {
+        "pc": "0x80000480",
+        "instruction": "or\ta2,a2,a6",
+        "source": "my_xor  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:70 (discriminator 66560)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:264 (discriminator 66560)"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x8000049c",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2521,
+      "vcd_time": 12640,
+      "fetch": {
+        "pc": "0x800004b0",
+        "instruction": "mv\ta4,s4",
+        "source": "my_xor  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:70 (discriminator 66560)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:264 (discriminator 66560)"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x800004a0",
+        "instruction": "addi\ta3,a3,4"
+      }
+    },
+    {
+      "cycle": 2555,
+      "vcd_time": 12810,
+      "fetch": {
+        "pc": "0x800004e8",
+        "instruction": "sw\ta5,0(a1)",
+        "source": "add_round_key  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:140  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:267"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x800004b8",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2572,
+      "vcd_time": 12895,
+      "fetch": {
+        "pc": "0x80000510",
+        "instruction": "lbu\ta5,0(a4)",
+        "source": "sub_bytes_masked  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:151  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:271"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x800004d4",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2574,
+      "vcd_time": 12905,
+      "fetch": {
+        "pc": "0x800004b8",
+        "instruction": "lbu\ta2,1(a4)",
+        "source": "add_round_key  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:140 (discriminator 99328)  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:267 (discriminator 99328)"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x800004d4",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2606,
+      "vcd_time": 13065,
+      "fetch": {
+        "pc": "0x8000051c",
+        "instruction": "xor\ta5,a3,a5",
+        "source": "sub_bytes_masked  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:151  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:271"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x800004ec",
+        "instruction": "addi\ta4,a4,4"
+      }
+    },
+    {
+      "cycle": 2613,
+      "vcd_time": 13100,
+      "fetch": {
+        "pc": "0x80000538",
+        "instruction": "lbu\tt2,13(sp)",
+        "source": "shift_rows_pair  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:167  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:272"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x800004c8",
+        "instruction": "slli\ta2,a2,0x8"
+      }
+    },
+    {
+      "cycle": 2614,
+      "vcd_time": 13105,
+      "fetch": {
+        "pc": "0x8000050c",
+        "instruction": "lbu\ta3,0(a2)",
+        "source": "sub_bytes_masked  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:151  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:271"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x800004cc",
+        "instruction": "or\ta2,a2,a0"
+      }
+    },
+    {
+      "cycle": 2701,
+      "vcd_time": 13540,
+      "fetch": {
+        "pc": "0x80000518",
+        "instruction": "addi\ta2,a2,1",
+        "source": "sub_bytes_masked  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:150  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:271"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x800004e0",
+        "instruction": "or\ta5,a5,a3"
+      }
+    },
+    {
+      "cycle": 2703,
+      "vcd_time": 13550,
+      "fetch": {
+        "pc": "0x80000520",
+        "instruction": "add\ta5,s0,a5",
+        "source": "sub_bytes_masked  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:151  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:271"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x800004e8",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2739,
+      "vcd_time": 13730,
+      "fetch": {
+        "pc": "0x80000534",
+        "instruction": "lbu\ta5,1(sp)",
+        "source": "shift_rows_pair  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:164  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:272"
+      },
+      "retire": {
+        "retiring": true,
+        "pc": "0x80000518",
+        "instruction": "addi\ta2,a2,1"
+      }
+    },
+    {
+      "cycle": 2746,
+      "vcd_time": 13765,
+      "fetch": {
+        "pc": "0x80000540",
+        "instruction": "lbu\tt6,5(sp)",
+        "source": "shift_rows_pair  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:165  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:272"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x80000524",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2756,
+      "vcd_time": 13815,
+      "fetch": {
+        "pc": "0x80000558",
+        "instruction": "lbu\ta0,6(sp)",
+        "source": "shift_rows_pair  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:180  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:272"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x80000524",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2758,
+      "vcd_time": 13825,
+      "fetch": {
+        "pc": "0x80000558",
+        "instruction": "lbu\ta0,6(sp)",
+        "source": "shift_rows_pair  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:180  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:272"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x80000524",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2767,
+      "vcd_time": 13870,
+      "fetch": {
+        "pc": "0x80000558",
+        "instruction": "lbu\ta0,6(sp)",
+        "source": "shift_rows_pair  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:180  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:272"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x80000524",
+        "instruction": null
+      }
+    },
+    {
+      "cycle": 2970,
+      "vcd_time": 14885,
+      "fetch": {
+        "pc": "0x8000052c",
+        "instruction": "sb\ta3,-1(a4)",
+        "source": "sub_bytes_masked  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:151  aes128_masked_encrypt  /workspace/designs/proteus/cellift/sw/scenario_aes128_masked_key/aes128_masked.c:271"
+      },
+      "retire": {
+        "retiring": false,
+        "pc": "0x80000524",
+        "instruction": null
+      }
+    }
+  ]
+}

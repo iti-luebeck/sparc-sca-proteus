@@ -38,7 +38,7 @@ targets:
           - '--trace'
           - '--trace-fst'
           - '--trace-max-array 1024'
-          - '-CFLAGS "-std=c++11 -Wall -DIS_VANILLA -DTOPLEVEL_NAME=proteus_tiny_soc -g -O0"'
+          - '-CFLAGS "-std=c++11 -Wall -DIS_VANILLA -DTOPLEVEL_NAME=proteus_tiny_soc -g -O2"'
           - '-LDFLAGS "-pthread -lutil"'
           - "-Wall"
           - "-Wno-PINCONNECTEMPTY"

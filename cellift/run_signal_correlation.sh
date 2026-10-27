@@ -50,6 +50,9 @@ SCENARIO_B="${2:-scenario_aes128_unmasked_key2}"
 CYCLES="${3:-36 37 38 39 40}"
 SIMLEN="${4:-200}"
 OUT_PREFIX="${5:-signal_out}"
+# How many signals to report per cycle. Raised externally when static taint
+# state would otherwise fill the list and hide the activity (_leak0) signals.
+SIG_TOP="${SIG_TOP:-20}"
 SIGNAL_JSON="${OUT_PREFIX}_signals.json"
 INSTR_JSON="${OUT_PREFIX}_instructions.json"
 DATA_SIGNAL_JSON="${OUT_PREFIX}_data_signals.json"
@@ -222,7 +225,11 @@ echo ""
 
 # ── Step 1: CellIFT fasttrace VCDs ───────────────────────────────────────────
 echo "── Step 1: CellIFT fasttrace VCDs (SIMLEN=${SIMLEN}, FST=${USE_FST}) ────────"
-FST_TMPDIR="${FST_TMPDIR:-/mnt/nvme1n1p1/tmp}"
+# Large FST writes need a roomy scratch directory, but it must not be a path
+# from whoever generated this tree: inside the container /mnt/... does not
+# exist and cannot be created, so the run died at "mkdir: cannot create
+# directory". Honour TMPDIR, fall back to /tmp.
+FST_TMPDIR="${FST_TMPDIR:-${TMPDIR:-/tmp}/sparc-sca-fst}"
 mkdir -p "$FST_TMPDIR"
 
 _run_fasttrace() {
@@ -230,7 +237,7 @@ _run_fasttrace() {
     if [[ "$USE_FST" -eq 1 ]]; then
         local fst_tmp="${out_vcd%.vcd}.fst"
         if ! run_with_stdout_mode "$sim_log" \
-            env TMPDIR="${FST_TMPDIR:-/mnt/nvme1n1p1/tmp}" \
+            env TMPDIR="${FST_TMPDIR}" \
             SIMLEN="$SIMLEN" TRACEFILE="$fst_tmp" \
             SIMROMELF="$elf" SIMSRAMELF="$elf" SIMSRAMTAINT="$taint" \
             "$FAST_BIN_FST"
@@ -281,7 +288,7 @@ echo "── Step 2: Signal-level leakage (leakage_signals.py) ─────�
 python3 "${SCRIPT_DIR}/leakage_signals.py" \
     "$VCD_A" "$VCD_B" \
     --cycles $CYCLES \
-    --top 20 \
+    --top "$SIG_TOP" \
     --plot \
     --out "$OUT_PREFIX" \
     --out-json "$SIGNAL_JSON"
@@ -314,7 +321,7 @@ if [[ "$REGEN_VANILLA" -eq 1 ]]; then
     if [[ "$USE_VANILLA_FST" -eq 1 ]]; then
         local_fst_tmp="${VCD_VAN%.vcd}.fst"
         if ! run_with_stdout_mode "$SIM_LOG_VAN" \
-            env TMPDIR="${FST_TMPDIR:-/mnt/nvme1n1p1/tmp}" \
+            env TMPDIR="${FST_TMPDIR}" \
             SIMLEN="$SIMLEN" TRACEFILE="$local_fst_tmp" \
             SIMSRAMELF="$ELF_A" \
             "$_active_vanilla_bin"
@@ -384,7 +391,7 @@ if [[ "$REGEN_VAN_B" -eq 1 ]]; then
     if [[ "$USE_VANILLA_FST" -eq 1 ]]; then
         local_fst_tmp_b="${VCD_VAN_B%.vcd}.fst"
         if ! run_with_stdout_mode "${TMP_ROOT}/vanilla_b.log" \
-            env TMPDIR="${FST_TMPDIR:-/mnt/nvme1n1p1/tmp}" \
+            env TMPDIR="${FST_TMPDIR}" \
             SIMLEN="$SIMLEN" TRACEFILE="$local_fst_tmp_b" \
             SIMSRAMELF="$ELF_B" \
             "$_active_vanilla_bin"

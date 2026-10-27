@@ -16,7 +16,24 @@ module proteus_tiny_soc #(
     parameter int unsigned DataWidth = 128      // Match AXI bus width
 ) (
   input logic clk_i,
-  input logic rst_ni
+  input logic rst_ni,
+
+  // ── Leakage counters ────────────────────────────────────────────────
+  //
+  // Real output PORTS rather than internal `logic` marked
+  // (* verilator_public *), so the harness reads them as `tb->module_->...`.
+  //
+  // Read through Verilator's mangled `rootp->proteus_tiny_soc__DOT__...`
+  // names they stop resolving the moment the instrumentation scope widens:
+  // with the counters coming straight off the Core instance the wrapper wire
+  // becomes a pure pass-through, Verilator collapses it into the Core's own
+  // signal, and the `__DOT__` symbol ceases to exist. That is a build
+  // failure rather than a wrong number, but it only appears once someone
+  // raises POWER_LEAKAGE_SCOPE or POWER_LEAKAGE_FLATTEN. A port cannot be
+  // optimised away, so it cannot recur.
+  output logic [31:0] leakage_counter_t0,
+  output logic [31:0] hamming_weight_counter_t0,
+  output logic [31:0] hamming_distance_counter_t0
 );
 
   // =========================================================================
@@ -97,12 +114,7 @@ module proteus_tiny_soc #(
   // Leakage counters (built-in from CellIFT)
   // =========================================================================
 
-  (* verilator_public *)
-  logic [31:0] leakage_counter_t0;
-  (* verilator_public *)
-  logic [31:0] hamming_weight_counter_t0;
-  (* verilator_public *)
-  logic [31:0] hamming_distance_counter_t0;
+  // (declared as output ports above -- the Core instance drives them directly)
 
   // =========================================================================
   // _leak0 signals from Core (all outputs, connected to capture leakage)

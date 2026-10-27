@@ -24,6 +24,7 @@ import argparse
 import os
 import re
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -184,6 +185,10 @@ def addr2line_lookup(elf: str, bin_: str, pc: int) -> str:
 
 def find_tool(name: str) -> str:
     """Search PATH and common install prefixes for a RISC-V tool."""
+    in_path = shutil.which(name)
+    if in_path:
+        return in_path
+
     riscv_prefix = os.environ.get("RISCV", "")
     candidates = [
         name,
@@ -194,6 +199,26 @@ def find_tool(name: str) -> str:
         if c and Path(c).is_file():
             return c
     return name  # let subprocess report a clear error
+
+
+def find_first_tool(names):
+    """First of `names` that actually exists, else names[0].
+
+    Needed because the toolchain does not ship every tool under both target
+    triples: the container has riscv32-unknown-elf-objdump but only
+    riscv64-unknown-elf-addr2line. Asking for the riscv32 addr2line therefore
+    fell through to the bare name, subprocess raised FileNotFoundError, and
+    addr2line_lookup()'s except-return-"" turned that into a silently EMPTY
+    source field for every cycle -- which is why Proteus's instruction
+    attribution had no source lines and grouped by mnemonic instead. The
+    riscv64 addr2line reads these 32-bit ELFs correctly. Ported from
+    designs/ibex/cellift/pc_at_leakage.py, which already did this.
+    """
+    for name in names:
+        candidate = find_tool(name)
+        if candidate != name or shutil.which(name):
+            return candidate
+    return names[0]
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -349,8 +374,18 @@ def main():
             if riscv:
                 os.environ["RISCV"] = riscv
 
-    objdump_bin   = args.objdump   or find_tool("riscv32-unknown-elf-objdump")
-    addr2line_bin = args.addr2line or find_tool("riscv32-unknown-elf-addr2line")
+    objdump_bin   = args.objdump or find_first_tool([
+        "riscv32-unknown-elf-objdump",
+        "riscv64-unknown-elf-objdump",
+    ])
+    addr2line_bin = args.addr2line or find_first_tool([
+        "riscv64-unknown-elf-addr2line",
+        "riscv32-unknown-elf-addr2line",
+    ])
+    if not shutil.which(addr2line_bin) and not Path(addr2line_bin).is_file():
+        print(f"WARNING: no addr2line found ({addr2line_bin}); source lines will "
+              f"be empty and attribution will fall back to mnemonics",
+              file=sys.stderr)
 
     # ── Build disassembly index ───────────────────────────────────────────────
     print(f"Loading disassembly from: {args.elf}")

@@ -77,9 +77,38 @@ def align(a: dict, b: dict, trim_tail: int = 0):
 
 
 def delta(arr: np.ndarray) -> np.ndarray:
-    """Identity — counters are already per-cycle (no diff needed)."""
-    return arr
+    """Per-cycle increments of a CUMULATIVE counter; identity for one that is
+    already per-cycle.
 
+    Which of the two a core emits is a property of its SoC wrapper, and the
+    they differ:
+
+      ibex     `assign hamming_weight_counter_t0 = ..._core_t0;`  pass-through,
+               so the CSV column is already per-cycle
+               (src/ibex_tiny_soc_taints.sv)
+      rocket   `hamming_weight_counter_t0 <= hamming_weight_counter_t0 + ...`
+               accumulates (src/top_tiny_soc_taints.sv)
+
+    This file was copied from a core that accumulates, so it differenced Ibex's
+    already-per-cycle column -- a SECOND difference. That deflates |t| by about
+    sqrt(2) on uncorrelated cycles, cancels any leak held flat across
+    consecutive cycles, and changes which cycles are testable at all (hence the
+    Bonferroni count). Proteus's copy of this file was adapted to a plain
+    identity; Ibex's was not.
+
+    Rather than hard-code either answer, detect it: a cumulative popcount can
+    only ever increase, so a monotonic non-decreasing column is cumulative and
+    anything that goes down is already per-cycle. That keeps this correct if the
+    file is copied to a fourth core, which is how the bug arrived.
+    """
+    if arr.size == 0:
+        return arr
+    if np.any(np.diff(arr) < 0):
+        return arr                      # already per-cycle
+    out = np.empty_like(arr)
+    out[0] = arr[0]
+    out[1:] = arr[1:] - arr[:-1]
+    return out
 
 def first_nonzero_cycle(cycles: np.ndarray, arr: np.ndarray):
     idx = np.nonzero(arr)[0]

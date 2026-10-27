@@ -1,0 +1,39 @@
+CellIFT TVLA Summary
+N_A=2  N_B=2  cycles=2995
+within_group_identical=False
+welch_threshold_raw=4.5
+welch_threshold_effective=4.500000
+multiple_comparison_correction=none
+alpha=0.05
+
+# Between-group comparison (key1 vs key2) — primary result
+[leakage_counter_t0]
+  first_leaky_cycle = none
+  leaky_cycle_count = 0
+  max_diff          = 0
+
+[hamming_weight_counter_t0]
+  first_leaky_cycle = 39
+  leaky_cycle_count = 2769
+  max_diff          = 824
+
+[hamming_distance_counter_t0]
+  first_leaky_cycle = 39
+  leaky_cycle_count = 2729
+  max_diff          = 851
+
+# Welch t-test results
+[leakage_counter_t0]
+  first_leaky_cycle = none
+  leaky_cycle_count = 0
+  max_t             = nan
+
+[hamming_weight_counter_t0]
+  first_leaky_cycle = 2291
+  leaky_cycle_count = 343
+  max_t             = 421.0000
+
+[hamming_distance_counter_t0]
+  first_leaky_cycle = 2291
+  leaky_cycle_count = 322
+  max_t             = 420.0000

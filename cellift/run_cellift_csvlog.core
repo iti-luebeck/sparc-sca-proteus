@@ -33,8 +33,19 @@ targets:
       verilator:
         mode: cc
         verilator_options:
-          - '--trace'
-          - '--trace-max-array 1024'
+          # No --trace: this target logs per-cycle switching activity to CSV and
+          # must not write a waveform. toplevel_csv.cc has no dump call of its
+          # own, so the tracing was invisible at the call site -- it comes from
+          # the shared testbench.h, whose tick() carries three trace_->dump()
+          # calls plus a flush() under #if VM_TRACE, and --trace is what defines
+          # VM_TRACE. Measured on the published build: 200 cycles produced an
+          # 11 MB VCD (~56 KB/cycle, ~1.7 GB per 30k-cycle trace); the runners
+          # only hid it by pointing TRACEFILE at /dev/null, so the cost was paid
+          # in CPU every cycle and discarded. The CSV is unaffected: the three
+          # counters are hardware outputs of the instrumented top, read straight
+          # off the model with no VM_TRACE guard. See the Ibex copy of this file
+          # for the full writeup. Waveforms come from the vanilla/fasttrace/trace
+          # targets, which pass --trace deliberately.
           - '-CFLAGS "-std=c++11 -Wall -DTOPLEVEL_NAME=proteus_tiny_soc -O2"'
           - '-LDFLAGS "-pthread -lutil"'
           - "-Wall"
