@@ -185,10 +185,13 @@ THRESHOLD=4.5
 WINDOW_LEN=5
 ATTR_CYCLES_MAX=24
 # Fixed key for GROUP A only. gen_scenarios.py applies --key to whichever
-# group it is generating, so passing it to both would set the unmasked arm's
-# two groups to the SAME key and produce an identically-zero result. Group B
-# keeps its own secret: a random key per trace on the masked arm (which
-# declares fvr_secret_labels), its template's key on the unmasked arm.
+# group it is generating, so passing it to both would set both groups of an arm
+# to the SAME key and produce an identically-zero result. Group B keeps its own
+# template's key on both arms.
+#
+# A fixed-vs-random-key statistic on a Hamming-weight model scales with
+# |HW(k) - 64|, so which key is held fixed changes the magnitude: do not quote
+# a result from one key. See KNOWN_KEYS in gen_scenarios.py.
 KEY_A=""
 INTERVAL_TOP_K=8
 PLOT=0
@@ -281,6 +284,7 @@ echo "n_unmasked    : $N_UNMASKED"
 echo "n_masked      : $N_MASKED"
 echo "simlen        : $SIMLEN"
 echo "seed          : $SEED"
+echo "key_a         : ${KEY_A:-template}"
 echo "jobs          : $JOBS"
 echo "threshold     : $THRESHOLD"
 echo "results       : $RESULTS"
@@ -301,15 +305,37 @@ if [[ "$SKIP_MASKED" -eq 0 ]]; then
     MASKED_TEMPLATE_B="$(python3 -c "from gen_scenarios import WORKLOADS; print(WORKLOADS['${WORKLOAD}']['templates']['masked']['b'])")"
 fi
 
+# An overridden key has to reach the root-cause attribution as well, or Steps
+# 5/6 explain a leak measured under one key using traces taken under another.
+# The attribution runs on ONE pair of scenarios, so it gets a dedicated copy of
+# the template with the key written in; group B is untouched, since the contrast
+# between the two keys is what the attribution measures.
+if [[ -n "$KEY_A" ]]; then
+    ATTR_UNMASKED_A="attr_${WORKLOAD}_unmasked_a"
+    UNMASKED_TEMPLATE_A="$ATTR_UNMASKED_A"
+    if [[ "$SKIP_MASKED" -eq 0 ]]; then
+        ATTR_MASKED_A="attr_${WORKLOAD}_masked_a"
+        MASKED_TEMPLATE_A="$ATTR_MASKED_A"
+    fi
+fi
+
 if [[ "$SKIP_GEN" -eq 0 ]]; then
     banner "Step 1 - Generate Scenarios"
     KEY_A_ARGS=()
     [[ -n "$KEY_A" ]] && KEY_A_ARGS=(--key "$KEY_A")
     python3 gen_scenarios.py --workload "$WORKLOAD" --type unmasked --group a --n "$N_UNMASKED" --seed "$SEED" "${KEY_A_ARGS[@]+"${KEY_A_ARGS[@]}"}"
     python3 gen_scenarios.py --workload "$WORKLOAD" --type unmasked --group b --n "$N_UNMASKED" --seed "$SEED"
+    if [[ -n "$KEY_A" ]]; then
+        python3 gen_scenarios.py --workload "$WORKLOAD" --type unmasked --group a \
+            --n 1 --seed "$SEED" --key "$KEY_A" --attr "$ATTR_UNMASKED_A"
+    fi
     if [[ "$SKIP_MASKED" -eq 0 ]]; then
         python3 gen_scenarios.py --workload "$WORKLOAD" --type masked --group a --n "$N_MASKED" --seed "$SEED" "${KEY_A_ARGS[@]+"${KEY_A_ARGS[@]}"}"
         python3 gen_scenarios.py --workload "$WORKLOAD" --type masked --group b --n "$N_MASKED" --seed "$SEED"
+        if [[ -n "$KEY_A" ]]; then
+            python3 gen_scenarios.py --workload "$WORKLOAD" --type masked --group a \
+                --n 1 --seed "$SEED" --key "$KEY_A" --attr "$ATTR_MASKED_A"
+        fi
     fi
 fi
 

@@ -66,6 +66,50 @@ WORKLOADS = {
 }
 
 
+# ── Fixed key ───────────────────────────────────────────────────────────────
+#
+# The fixed key is an experimental VARIABLE, not a property of a template.
+# A fixed-vs-random-key statistic on a Hamming-weight model scales with
+# |HW(k) - 64|, because the random group draws keys of expected weight 64, so
+# quoting one key quotes one point on that curve. KNOWN_KEYS spans the range
+# deliberately: HW 65, 96, 64 and 32.
+KNOWN_KEYS = {
+    "k1": "2b7e151628aed2a6abf7158809cf4f3c",   # FIPS-197 App. B,   HW 65
+    "k2": "fffefdfcfbfaf9f8f7f6f5f4f3f2f1f0",   # high weight,       HW 96
+    "k3": "8da93f17c25e6b04e17a952c38d046bf",   # high entropy,      HW 64
+    "k4": "000102030405060708090a0b0c0d0e0f",   # NIST App. C.1,     HW 32
+}
+
+
+def resolve_key(spec: str) -> bytes:
+    """A KNOWN_KEYS name or 32 hex digits."""
+    if spec in KNOWN_KEYS:
+        spec = KNOWN_KEYS[spec]
+    raw = bytes.fromhex(spec)
+    if len(raw) != 16:
+        raise ValueError(f"key must be 16 bytes, got {len(raw)}")
+    return raw
+
+
+def set_key(src: str, key: bytes, rng: random.Random) -> str:
+    """Write `key` into whichever key labels the template carries.
+
+    A template keeps its key either in the clear (aes_key) or already split
+    (aes_key_share0 and aes_key_mask); the three cores do not agree on which.
+    A split template is rewritten as a fresh split of the same key, so the
+    invariant share0 ^ mask == key still holds.
+    """
+    if re.search(r"^[ \t]*aes_key:[ \t]*$", src, re.M):
+        return replace_label_bytes(src, "aes_key", key)
+    if re.search(r"^[ \t]*aes_key_share0:[ \t]*$", src, re.M):
+        mask = bytes(rng.randint(0, 255) for _ in range(16))
+        share = bytes(a ^ b for a, b in zip(key, mask))
+        src = replace_label_bytes(src, "aes_key_share0", share)
+        src = replace_label_bytes(src, "aes_key_mask", mask)
+        return src
+    raise RuntimeError("template carries neither aes_key nor aes_key_share0")
+
+
 def bytes_to_asm(data: bytes) -> str:
     lines = []
     for i in range(0, len(data), 4):
@@ -127,14 +171,16 @@ def _extract_label_bytes(src: str, label: str, n_bytes: int) -> bytes:
     return bytes(out)
 
 
-def generate(workload: str, scenario_type: str, group: str, idx: int, seed_val: int) -> dict:
+def generate(workload: str, scenario_type: str, group: str, idx: int,
+             seed_val: int, key_spec: str = None,
+             out_name: str = None, patch: bool = True) -> dict:
     profile = WORKLOADS[workload]
     template = profile["templates"][scenario_type][group]
 
     src_sw = SCRIPT_DIR / "sw" / template
     src_taint = SCRIPT_DIR / "taint_data" / template
 
-    out_name = f"multi_{workload}_{scenario_type}_{group}_{idx:03d}"
+    out_name = out_name or f"multi_{workload}_{scenario_type}_{group}_{idx:03d}"
     out_sw = SCRIPT_DIR / "sw" / out_name
     out_taint = SCRIPT_DIR / "taint_data" / out_name
 
@@ -148,12 +194,19 @@ def generate(workload: str, scenario_type: str, group: str, idx: int, seed_val: 
 
     main_s = out_sw / "main.S"
     original = main_s.read_text()
+    if key_spec:
+        # Applied to `original`, not only to the edited copy: the key labels sit
+        # in protected_labels, and verify_protected() below compares the two. An
+        # override written to `edited` alone would be rejected as tampering.
+        original = set_key(original, resolve_key(key_spec),
+                           random.Random(seed_val ^ 0x4B4559))
     edited = original
 
     rng = random.Random(seed_val)
-    for label, n_bytes in profile["patch_labels"][scenario_type]:
-        data = bytes(rng.randint(0, 255) for _ in range(n_bytes))
-        edited = replace_label_bytes(edited, label, data)
+    if patch:
+        for label, n_bytes in profile["patch_labels"][scenario_type]:
+            data = bytes(rng.randint(0, 255) for _ in range(n_bytes))
+            edited = replace_label_bytes(edited, label, data)
 
     verify_protected(edited, original, profile["protected_labels"])
     main_s.write_text(edited)
@@ -181,6 +234,8 @@ def generate(workload: str, scenario_type: str, group: str, idx: int, seed_val: 
         "index": int(idx),
         "seed_per_trace": int(seed_val),
         "template": template,
+        "key": key_spec,
+        "key_hex": resolve_key(key_spec).hex() if key_spec else None,
         "main_s_sha256": main_hash,
         "taint_data_sha256": taint_hash,
         "patched_labels": patched,
@@ -194,11 +249,31 @@ def main() -> None:
     ap.add_argument("--group", required=True, choices=["a", "b"])
     ap.add_argument("--n", required=True, type=int)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--key", default=None,
+                    help="fixed key for THIS group: a KNOWN_KEYS name "
+                         "(k1..k4) or 32 hex digits. Applies to the group "
+                         "being generated, so pass it to one group only.")
+    ap.add_argument("--attr", metavar="NAME", default=None,
+                    help="emit ONE scenario called NAME instead of the "
+                         "multi_* series, with --key applied and the per-trace "
+                         "labels left at their template values. Root-cause "
+                         "attribution runs on a single pair of scenarios and "
+                         "has to see the same key as the TVLA arm did.")
     args = ap.parse_args()
 
     if args.type not in WORKLOADS[args.workload]["templates"]:
         valid = ", ".join(sorted(WORKLOADS[args.workload]["templates"].keys()))
         sys.exit(f"ERROR: unsupported --type '{args.type}' for workload '{args.workload}'. Valid: {valid}")
+
+    if args.attr:
+        print(f"Generating attribution scenario {args.attr}: "
+              f"workload={args.workload} type={args.type} group={args.group} "
+              f"key={args.key or 'template'}")
+        row = generate(args.workload, args.type, args.group, 0,
+                       seed_val=args.seed * 10000, key_spec=args.key,
+                       out_name=args.attr, patch=False)
+        print(f"Done. Scenario: {row['scenario']}")
+        return
 
     print(
         f"Generating {args.n} scenarios: workload={args.workload} type={args.type} group={args.group} seed={args.seed}"
@@ -206,7 +281,9 @@ def main() -> None:
 
     rows = []
     for i in range(args.n):
-        rows.append(generate(args.workload, args.type, args.group, i, seed_val=args.seed * 10000 + i))
+        rows.append(generate(args.workload, args.type, args.group, i,
+                             seed_val=args.seed * 10000 + i,
+                             key_spec=args.key))
 
     prefix = f"multi_{args.workload}_{args.type}_{args.group}"
     manifest_dir = SCRIPT_DIR / "sw" / "_manifests"
@@ -219,6 +296,7 @@ def main() -> None:
         "group": args.group,
         "n": int(args.n),
         "seed": int(args.seed),
+        "key": args.key,
         "matched_pair_key": "seed_per_trace = seed * 10000 + index",
         "prefix": prefix,
         "scenarios": rows,
